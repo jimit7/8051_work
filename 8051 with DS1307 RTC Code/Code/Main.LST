@@ -1,0 +1,55 @@
+C51 COMPILER V9.02   MAIN                                                                  02/03/2013 02:03:51 PAGE 1   
+
+
+C51 COMPILER V9.02, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN Main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*  Name     : main.c
+   2           *  Purpose  : Main file for DS1307 RTC code for AT89C51.
+   3           *  Author   : M.Saeed Yasin
+   4           *  Date     : 06-11-12
+   5           *  Website  : saeedsolutions.blogspot.com
+   6           *  Revision : None
+   7           */
+   8          #include "Includes.h"
+   9          
+  10          // Main function
+  11          void main()
+  12          {       
+  13   1              InitLCD();      // Initialize LCD       
+  14   1              InitI2C();      // Initialize i2c pins                                                                                  
+  15   1      
+  16   1              // Set initial time
+  17   1              Set_DS1307_RTC_Time(AM_Time, 8, 32, 59);        // Set time 08:32:59 AM
+  18   1      
+  19   1              // Set initial date
+  20   1              Set_DS1307_RTC_Date(2, 11, 12, Friday);         // Set 02-11-2012 @ Friday
+  21   1      
+  22   1              while(1)
+  23   1              {
+  24   2                      // Display RTC time on first line of LCD
+  25   2                      DisplayTimeToLCD(Get_DS1307_RTC_Time());
+  26   2      
+  27   2                      // Display RTC date on second line of LCD
+  28   2                      DisplayDateOnLCD(Get_DS1307_RTC_Date());
+  29   2      
+  30   2                      delay(65000);   // Roughly about 1 second delay
+  31   2              }
+  32   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     51    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

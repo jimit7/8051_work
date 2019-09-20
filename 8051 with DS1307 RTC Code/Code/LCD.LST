@@ -1,0 +1,199 @@
+C51 COMPILER V9.02   LCD                                                                   02/03/2013 02:03:51 PAGE 1   
+
+
+C51 COMPILER V9.02, COMPILATION OF MODULE LCD
+OBJECT MODULE PLACED IN LCD.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE LCD.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "Includes.h"
+   2          
+   3          void ToggleEpinOfLCD(void)
+   4          {
+   5   1              E = 1;                // Give a pulse on E pin
+   6   1              __delay_us(E_Delay);  // so that LCD can latch the
+   7   1              E = 0;                // data from data bus
+   8   1              __delay_us(E_Delay);    
+   9   1      }
+  10          
+  11          void WriteDataToLCD(char t)
+  12          {
+  13   1         RS = 1;             // This is data
+  14   1      
+  15   1         P2 &= 0x0F;             // Make P2.4 to P2.7 zero
+  16   1         P2 |= (t&0xF0);     // Write Upper nibble of data
+  17   1         ToggleEpinOfLCD();  // Toggle E pin to send data 
+  18   1      
+  19   1         P2 &= 0x0F;             // Make P2.4 to P2.7 zero
+  20   1         P2 |= ((t<<4)&0xF0);// Write Lower nibble of data
+  21   1         ToggleEpinOfLCD();  // Toggle E pin to send data 
+  22   1      }
+  23          
+  24          
+  25          void WriteCommandToLCD(int z)
+  26          {
+  27   1         RS = 0;             // This is command
+  28   1      
+  29   1         P2 &= 0x0F;             // Make P2.4 to P2.7 zero
+  30   1         P2 |= (z&0xF0);     // Write Upper nibble of data
+  31   1         ToggleEpinOfLCD();  // Toggle E pin to send data 
+  32   1      
+  33   1         P2 &= 0x0F;             // Make P2.4 to P2.7 zero
+  34   1         P2 |= ((z<<4)&0xF0);// Write Lower nibble of data
+  35   1         ToggleEpinOfLCD();  // Toggle E pin to send data 
+  36   1      }
+  37          
+  38          void InitLCD(void)
+  39          {
+  40   1              RS = 0;                 // Make pin zero
+  41   1              E  = 0;                 // Make Pin zero                                        
+  42   1      
+  43   1        ///////////// Reset process from datasheet /////////
+  44   1           __delay_us(15000);
+  45   1      
+  46   1               P2 &= 0x0F;               // Make P2.4 to P2.7 zero
+  47   1               P2 |= 0x30;               // Write 0x3
+  48   1           ToggleEpinOfLCD();    // Toggle E pin to send data 
+  49   1      
+  50   1           __delay_us(4500);
+  51   1      
+  52   1               P2 &= 0x0F;               // Make P2.4 to P2.7 zero
+  53   1               P2 |= 0x30;               // Write 0x3
+  54   1           ToggleEpinOfLCD();    // Toggle E pin to send data 
+  55   1      
+C51 COMPILER V9.02   LCD                                                                   02/03/2013 02:03:51 PAGE 2   
+
+  56   1           __delay_us(300);
+  57   1      
+  58   1               P2 &= 0x0F;               // Make P2.4 to P2.7 zero
+  59   1               P2 |= 0x30;               // Write 0x3
+  60   1           ToggleEpinOfLCD();    // Toggle E pin to send data 
+  61   1      
+  62   1           __delay_us(650);
+  63   1      
+  64   1               P2 &= 0x0F;               // Make P2.4 to P2.7 zero
+  65   1               P2 |= 0x20;               // Write 0x2
+  66   1           ToggleEpinOfLCD();    // Toggle E pin to send data 
+  67   1      
+  68   1               __delay_us(650);
+  69   1      
+  70   1        /////////////////////////////////////////////////////
+  71   1         WriteCommandToLCD(0x28);    //function set
+  72   1         WriteCommandToLCD(0x0c);    //display on,cursor off,blink off
+  73   1         WriteCommandToLCD(0x01);    //clear display
+  74   1         WriteCommandToLCD(0x06);    //entry mode, set increment
+  75   1      }
+  76          
+  77          
+  78          
+  79          void ClearLCDScreen(void)       // Clear the Screen and return cursor to zero position
+  80          {
+  81   1              WriteCommandToLCD(0x01);    // Clear the screen
+  82   1              __delay_us(2000);           // Delay for cursor to return at zero position
+  83   1      }
+  84          
+  85          
+  86          void WriteStringToLCD(const char *s)
+  87          {
+  88   1              while(*s)       
+  89   1                      WriteDataToLCD(*s++); 
+  90   1      }
+  91          
+  92          
+  93          
+  94          void DisplayTimeToLCD( unsigned char* pTimeArray )   // Displays time in HH:MM:SS AM/PM format
+  95          {
+  96   1              ClearLCDScreen();      // Move cursor to zero location and clear screen
+  97   1      
+  98   1              // Display Hour
+  99   1              WriteDataToLCD( (pTimeArray[2]/10)+0x30 );
+ 100   1              WriteDataToLCD( (pTimeArray[2]%10)+0x30 );
+ 101   1      
+ 102   1              //Display ':'
+ 103   1              WriteDataToLCD(':');
+ 104   1      
+ 105   1              //Display Minutes
+ 106   1              WriteDataToLCD( (pTimeArray[1]/10)+0x30 );
+ 107   1              WriteDataToLCD( (pTimeArray[1]%10)+0x30 );
+ 108   1      
+ 109   1              //Display ':'
+ 110   1              WriteDataToLCD(':');
+ 111   1      
+ 112   1              //Display Seconds
+ 113   1              WriteDataToLCD( (pTimeArray[0]/10)+0x30 );
+ 114   1              WriteDataToLCD( (pTimeArray[0]%10)+0x30 );
+ 115   1      
+ 116   1              //Display Space
+ 117   1              WriteDataToLCD(' ');
+C51 COMPILER V9.02   LCD                                                                   02/03/2013 02:03:51 PAGE 3   
+
+ 118   1      
+ 119   1              // Display mode
+ 120   1              switch(pTimeArray[3])
+ 121   1              {
+ 122   2              case AM_Time:   WriteStringToLCD("AM"); break;
+ 123   2              case PM_Time:   WriteStringToLCD("PM"); break;
+ 124   2      
+ 125   2              default: WriteDataToLCD('H');   break;
+ 126   2              }
+ 127   1      }
+ 128          
+ 129          
+ 130          
+ 131          
+ 132          void DisplayDateOnLCD( unsigned char* pDateArray )   // Displays Date in DD:MM:YY @ Day format
+ 133          {
+ 134   1              WriteCommandToLCD(0xc0);      // Move cursor to second line
+ 135   1      
+ 136   1              // Display Date
+ 137   1              WriteDataToLCD( (pDateArray[1]/10)+0x30 );
+ 138   1              WriteDataToLCD( (pDateArray[1]%10)+0x30 );
+ 139   1      
+ 140   1              //Display '/'
+ 141   1              WriteDataToLCD('/');
+ 142   1      
+ 143   1              //Display Month
+ 144   1              WriteDataToLCD( (pDateArray[2]/10)+0x30 );
+ 145   1              WriteDataToLCD( (pDateArray[2]%10)+0x30 );
+ 146   1      
+ 147   1              //Display '/'
+ 148   1              WriteDataToLCD('/');
+ 149   1      
+ 150   1              //Display Year
+ 151   1              WriteDataToLCD( (pDateArray[3]/10)+0x30 );
+ 152   1              WriteDataToLCD( (pDateArray[3]%10)+0x30 );
+ 153   1      
+ 154   1              //Display Space
+ 155   1              WriteDataToLCD(' ');
+ 156   1      
+ 157   1              // Display Day
+ 158   1              switch(pDateArray[0])
+ 159   1              {
+ 160   2              case Monday:    WriteStringToLCD("MON");        break;
+ 161   2              case Tuesday:   WriteStringToLCD("TUE");        break;
+ 162   2              case Wednesday: WriteStringToLCD("WED");        break;
+ 163   2              case Thursday:  WriteStringToLCD("THU");        break;
+ 164   2              case Friday:    WriteStringToLCD("FRI");        break;
+ 165   2              case Saturday:  WriteStringToLCD("SAT");        break;
+ 166   2              case Sunday:    WriteStringToLCD("SUN");        break;
+ 167   2      
+ 168   2              default: WriteStringToLCD("???");       break;
+ 169   2              }
+ 170   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    637    ----
+   CONSTANT SIZE    =     38    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      12
+   IDATA SIZE       =   ----    ----
+C51 COMPILER V9.02   LCD                                                                   02/03/2013 02:03:51 PAGE 4   
+
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
