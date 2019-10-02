@@ -16,8 +16,8 @@ unsigned char  up_sample,down_sample,mid_sample;
 
 code unsigned char line1[16]=" Solar Tracking ";
 code unsigned char line2[16]="--developed by--";
-code unsigned char line3[16]=" Neel Dhrumit";
-code unsigned char line4[16]=" Meet Ankit";  
+code unsigned char line3[16]=" Jimit";
+code unsigned char line4[16]=" Patel";  
 
 
 
