@@ -1,0 +1,47 @@
+C51 COMPILER V9.06   LM35_LED                                                              03/12/2015 19:11:13 PAGE 1   
+
+
+C51 COMPILER V9.06, COMPILATION OF MODULE LM35_LED
+OBJECT MODULE PLACED IN ..\Proteus simulation\LM35_LED.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE LM35_LED.c BROWSE DEBUG OBJECTEXTEND OBJECT(..\Proteus simulation\LM35_LED.
+                    -obj)
+
+line level    source
+
+   1          //************************************//
+   2          
+   3          //NAME:   Jignesh Patoliya.
+   4          //TITLE:  READ THE VALUE OF LM35 TEMPERATURE SENSOR AND DISPLAY ON LED
+   5          //DATE:   07/03/2015
+   6          
+   7          //***********************************//
+   8          
+   9          //***********START****************//
+  10          
+  11          #include<reg51.h>
+  12          #include "adc804.h"
+  13          #define LED P1 
+  14          
+  15          unsigned char Dout;
+  16          
+  17          //************MAIN PROGRAM***********//
+  18          
+  19          void main()
+  20          {               
+  21   1              adcInit();
+  22   1              while(1)
+  23   1              {
+  24   2                      Dout = analogRead();
+  25   2                      LED = Dout;
+  26   2                      delay(10);
+*** WARNING C206 IN LINE 26 OF LM35_LED.c: 'delay': missing function-prototype
+*** ERROR C267 IN LINE 26 OF LM35_LED.c: 'delay': requires ANSI-style prototype
+  27   2              }
+  28   1      
+  29   1      }
+  30          
+  31          //**************STOP**************//
+  32          
+  33                  
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  1 ERROR(S)

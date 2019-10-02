@@ -1,0 +1,5 @@
+"..\Proteus simulation\LM35_LED.obj",
+"..\Proteus simulation\adc804.obj",
+"..\Proteus simulation\delay.obj" 
+TO "..\Proteus simulation\LM35_LED" 
+PRINT(".\LM35_LED.m51") RAMSIZE(256) 

@@ -1,0 +1,14 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\training\8051\8051_programs\ADC0804\LM35_LCD\code\LM35_LCD.uvproj
+Project File Date:  03/29/2015
+
+<h2>Output:</h2>
+Build target 'Target 1'
+linking...
+Program Size: data=15.0 xdata=0 code=513
+creating hex file from "..\Proteus simulation\LM35_LCD"...
+"..\Proteus simulation\LM35_LCD" - 0 Error(s), 0 Warning(s).
