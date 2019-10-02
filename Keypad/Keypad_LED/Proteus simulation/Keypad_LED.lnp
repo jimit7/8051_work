@@ -1,0 +1,4 @@
+"..\Proteus simulation\keypad.obj",
+"..\Proteus simulation\keypad_led.obj" 
+TO "..\Proteus simulation\Keypad_LED" 
+PRINT(".\Keypad_LED.m51") RAMSIZE(256) 

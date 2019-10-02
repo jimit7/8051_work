@@ -1,0 +1,4 @@
+"..\Proteus simulation\keypad.obj",
+"..\Proteus simulation\Keypad_7seg.obj" 
+TO "..\Proteus simulation\Keypad_7seg" 
+PRINT(".\Keypad_7seg.m51") RAMSIZE(256) 
