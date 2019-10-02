@@ -1,0 +1,3 @@
+"..\Sine_Wave.obj" 
+TO "..\Sine_Wave" 
+PRINT(".\Sine_Wave.m51") RAMSIZE(256) 

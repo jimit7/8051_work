@@ -1,0 +1,4 @@
+"..\Proteus Simulation\Stair_Case.obj",
+"..\Proteus Simulation\delay.obj" 
+TO "..\Proteus Simulation\Stair_Case" 
+PRINT(".\Stair_Case.m51") RAMSIZE(256) 

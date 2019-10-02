@@ -1,0 +1,4 @@
+"..\Proteus Simulation\Sine_Wave.obj",
+"..\Proteus Simulation\delay.obj" 
+TO "..\Proteus Simulation\Sine_Wave" 
+PRINT(".\Sine_Wave.m51") RAMSIZE(256) 

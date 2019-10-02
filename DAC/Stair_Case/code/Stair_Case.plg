@@ -1,0 +1,16 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+F:\CHARUSAT\Even Semester_2014_15\Practical\8051_Final_Folder\DAC\Stair_Case\code\Stair_Case.uvproj
+Project File Date:  03/09/2015
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling Stair_Case.c...
+compiling delay.c...
+linking...
+Program Size: data=10.0 xdata=0 code=107
+creating hex file from "..\Proteus Simulation\Stair_Case"...
+"..\Proteus Simulation\Stair_Case" - 0 Error(s), 0 Warning(s).

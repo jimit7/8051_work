@@ -1,0 +1,4 @@
+"..\Proteus Simulation\Triangular_wave.obj",
+"..\Proteus Simulation\delay.obj" 
+TO "..\Proteus Simulation\Traingular_Wave" 
+PRINT(".\Traingular_Wave.m51") RAMSIZE(256) 

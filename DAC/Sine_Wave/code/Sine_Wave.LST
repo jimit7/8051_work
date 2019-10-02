@@ -1,0 +1,62 @@
+C51 COMPILER V9.06   SINE_WAVE                                                             03/09/2015 14:05:50 PAGE 1   
+
+
+C51 COMPILER V9.06, COMPILATION OF MODULE SINE_WAVE
+OBJECT MODULE PLACED IN ..\Proteus Simulation\Sine_Wave.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Sine_Wave.c BROWSE DEBUG OBJECTEXTEND TABS(2) OBJECT(..\Proteus Simulation\
+                    -Sine_Wave.obj)
+
+line level    source
+
+   1          //************************************//
+   2          
+   3          //NAME:   
+   4          //TITLE:  GENERATE SINE WAVE.
+   5          //DATE:   22/01/2014
+   6          
+   7          
+   8          //***********************************//
+   9          
+  10          //***********START****************//
+  11          
+  12          #include<reg51.h>
+  13          #include "delay.h"
+  14          
+  15          #define DATAPORT P2
+  16          
+  17          //********MAIN PROGRAM***********//
+  18          
+  19          void main()
+  20          {
+  21   1        char value[] = {128,150,172,192,210,226,239,248,254,255,
+  22   1            254,248,239,226,210,192,172,150,128,
+  23   1            106,84,64,46,30,17,8,2,0,2,8,17,30,46,64,84,106};
+  24   1         while(1)
+  25   1         {
+  26   2          unsigned char z;
+  27   2      
+  28   2          for(z=0;z<36;z++)
+  29   2          {
+  30   3            DATAPORT = value[z];
+  31   3            delay(10);
+  32   3          }
+  33   2         }
+  34   1      
+  35   1      }        
+  36          
+  37          
+  38          //********START***********//
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     48    ----
+   CONSTANT SIZE    =     36    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      37
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
