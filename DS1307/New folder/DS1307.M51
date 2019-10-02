@@ -1,0 +1,504 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/02/2015  15:50:19  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE test_ds1307.obj TO DS1307 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  test_ds1307.obj (TEST_DS1307)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  DS1307 (TEST_DS1307)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0008H     UNIT         _DATA_GROUP_
+                    0010H     0010H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         _BIT_GROUP_
+                    0020H.1   0000H.7                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0087H     UNIT         ?PR?MAIN?TEST_DS1307
+            CODE    0887H     0031H     UNIT         ?PR?_I2C_WRITE?TEST_DS1307
+            CODE    08B8H     0027H     UNIT         ?PR?LCD_INIT?TEST_DS1307
+            CODE    08DFH     0025H     UNIT         ?PR?_LCD_PUTS?TEST_DS1307
+            CODE    0904H     0024H     UNIT         ?PR?LCD_ENABLE?TEST_DS1307
+            CODE    0928H     001DH     UNIT         ?PR?I2C_READ?TEST_DS1307
+            CODE    0945H     001DH     UNIT         ?PR?_DS1307_GET?TEST_DS1307
+            CODE    0962H     001BH     UNIT         ?PR?POWERON?TEST_DS1307
+            CODE    097DH     001AH     UNIT         ?PR?_DS1307_SETTIME?TEST_DS1307
+            CODE    0997H     001AH     UNIT         ?PR?_DS1307_SETDATE?TEST_DS1307
+            CODE    09B1H     0019H     UNIT         ?PR?_LCD_DELAY?TEST_DS1307
+            CODE    09CAH     0019H     UNIT         ?C?LIB_CODE
+            CODE    09E3H     0018H     UNIT         ?PR?_SEND2LCD?TEST_DS1307
+            CODE    09FBH     0014H     UNIT         ?PR?I2C_START?TEST_DS1307
+            CODE    0A0FH     000DH     UNIT         ?PR?I2C_STOP?TEST_DS1307
+            CODE    0A1CH     000CH     UNIT         ?PR?I2C_DELAY?TEST_DS1307
+            CODE    0A28H     000CH     UNIT         ?PR?_LCD_COMMAND?TEST_DS1307
+            CODE    0A34H     000CH     UNIT         ?PR?_LCD_PUTC?TEST_DS1307
+            CODE    0A40H     000CH     UNIT         ?CO?TEST_DS1307
+            CODE    0A4CH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0A58H     000BH     UNIT         ?PR?I2C_ACK?TEST_DS1307
+            CODE    0A63H     000BH     UNIT         ?PR?I2C_NOACK?TEST_DS1307
+            CODE    0A6EH     0006H     UNIT         ?PR?I2C_CLOCK?TEST_DS1307
+
+
+
+OVERLAY MAP OF MODULE:   DS1307 (TEST_DS1307)
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/02/2015  15:50:19  PAGE 2
+
+
+
+SEGMENT                                    BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT                   START    LENGTH     START    LENGTH
+---------------------------------------------------------------------------
+?C_C51STARTUP                           -----    -----      -----    -----
+  +--> ?PR?MAIN?TEST_DS1307
+
+?PR?MAIN?TEST_DS1307                    -----    -----      0008H    0005H
+  +--> ?PR?POWERON?TEST_DS1307
+  +--> ?PR?_LCD_COMMAND?TEST_DS1307
+  +--> ?CO?TEST_DS1307
+  +--> ?PR?_LCD_PUTS?TEST_DS1307
+  +--> ?PR?_DS1307_GET?TEST_DS1307
+  +--> ?PR?_SEND2LCD?TEST_DS1307
+  +--> ?PR?_LCD_PUTC?TEST_DS1307
+
+?PR?POWERON?TEST_DS1307                 -----    -----      -----    -----
+  +--> ?PR?LCD_INIT?TEST_DS1307
+  +--> ?PR?_LCD_DELAY?TEST_DS1307
+
+?PR?LCD_INIT?TEST_DS1307                -----    -----      -----    -----
+  +--> ?PR?_LCD_COMMAND?TEST_DS1307
+  +--> ?PR?_LCD_DELAY?TEST_DS1307
+
+?PR?_LCD_COMMAND?TEST_DS1307            -----    -----      -----    -----
+  +--> ?PR?LCD_ENABLE?TEST_DS1307
+  +--> ?PR?_LCD_DELAY?TEST_DS1307
+
+?PR?LCD_ENABLE?TEST_DS1307              -----    -----      -----    -----
+  +--> ?PR?_LCD_DELAY?TEST_DS1307
+
+?PR?_LCD_PUTS?TEST_DS1307               -----    -----      000DH    0003H
+  +--> ?PR?_LCD_PUTC?TEST_DS1307
+
+?PR?_LCD_PUTC?TEST_DS1307               -----    -----      -----    -----
+  +--> ?PR?LCD_ENABLE?TEST_DS1307
+  +--> ?PR?_LCD_DELAY?TEST_DS1307
+
+?PR?_DS1307_GET?TEST_DS1307             -----    -----      -----    -----
+  +--> ?PR?_I2C_WRITE?TEST_DS1307
+  +--> ?PR?I2C_START?TEST_DS1307
+  +--> ?PR?I2C_READ?TEST_DS1307
+  +--> ?PR?I2C_STOP?TEST_DS1307
+
+?PR?_I2C_WRITE?TEST_DS1307              0020H.0  0000H.1    -----    -----
+  +--> ?PR?I2C_START?TEST_DS1307
+  +--> ?PR?I2C_CLOCK?TEST_DS1307
+  +--> ?PR?I2C_DELAY?TEST_DS1307
+
+?PR?I2C_START?TEST_DS1307               -----    -----      -----    -----
+  +--> ?PR?I2C_DELAY?TEST_DS1307
+
+?PR?I2C_CLOCK?TEST_DS1307               -----    -----      -----    -----
+  +--> ?PR?I2C_DELAY?TEST_DS1307
+
+?PR?I2C_READ?TEST_DS1307                0020H.0  0000H.1    -----    -----
+  +--> ?PR?I2C_DELAY?TEST_DS1307
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/02/2015  15:50:19  PAGE 3
+
+
+
+?PR?I2C_STOP?TEST_DS1307                -----    -----      -----    -----
+  +--> ?PR?I2C_DELAY?TEST_DS1307
+
+?PR?_SEND2LCD?TEST_DS1307               -----    -----      -----    -----
+  +--> ?PR?_LCD_PUTC?TEST_DS1307
+
+
+
+SYMBOL TABLE OF MODULE:  DS1307 (TEST_DS1307)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        TEST_DS1307
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:08DFH         PUBLIC        _LCD_puts
+  C:0945H         PUBLIC        _DS1307_get
+  B:00A0H.4       PUBLIC        LCD_en
+  C:09E3H         PUBLIC        _send2lcd
+  C:0A28H         PUBLIC        _LCD_command
+  B:00A0H.5       PUBLIC        LCD_rs
+  C:091EH         PUBLIC        LCD_enable
+  C:0800H         PUBLIC        main
+  C:0A63H         PUBLIC        I2C_noack
+  C:0A6EH         PUBLIC        I2C_clock
+  C:0A21H         PUBLIC        I2C_delay
+  C:0997H         PUBLIC        _DS1307_setdate
+  C:0928H         PUBLIC        I2C_read
+  C:097DH         PUBLIC        _DS1307_settime
+  C:09B1H         PUBLIC        _LCD_delay
+  C:0890H         PUBLIC        _I2C_write
+  C:0962H         PUBLIC        PowerOn
+  C:0A58H         PUBLIC        I2C_ack
+  C:09FBH         PUBLIC        I2C_start
+  B:00A0H.7       PUBLIC        SDA
+  B:00A0H.6       PUBLIC        SCL
+  C:0A0FH         PUBLIC        I2C_stop
+  C:08B8H         PUBLIC        LCD_init
+  C:0A34H         PUBLIC        _LCD_putc
+  C:0A1CH         SYMBOL        L?0055
+  -------         PROC          L?0054
+  -------         ENDPROC       L?0054
+  C:0A1CH         SYMBOL        L?0055
+  -------         PROC          I2C_DELAY
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:0A21H         LINE#         8
+  C:0A21H         LINE#         9
+  C:0A21H         LINE#         12
+  C:0A27H         LINE#         13
+  -------         ENDPROC       I2C_DELAY
+  -------         PROC          I2C_CLOCK
+  C:0A6EH         LINE#         15
+  C:0A6EH         LINE#         16
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/02/2015  15:50:19  PAGE 4
+
+
+  C:0A6EH         LINE#         17
+  C:0A6EH         LINE#         19
+  C:0A6EH         LINE#         21
+  C:0A71H         LINE#         23
+  C:0A73H         LINE#         24
+  -------         ENDPROC       I2C_CLOCK
+  -------         PROC          I2C_START
+  C:09FBH         LINE#         26
+  C:09FBH         LINE#         27
+  C:09FBH         LINE#         28
+  C:09FEH         LINE#         29
+  C:0A00H         LINE#         31
+  C:0A02H         LINE#         32
+  C:0A04H         LINE#         34
+  C:0A07H         LINE#         36
+  C:0A09H         LINE#         38
+  C:0A0CH         LINE#         40
+  C:0A0EH         LINE#         41
+  -------         ENDPROC       I2C_START
+  -------         PROC          I2C_STOP
+  C:0A0FH         LINE#         43
+  C:0A0FH         LINE#         44
+  C:0A0FH         LINE#         45
+  C:0A12H         LINE#         46
+  C:0A14H         LINE#         48
+  C:0A16H         LINE#         49
+  C:0A16H         LINE#         51
+  C:0A16H         LINE#         53
+  C:0A19H         LINE#         55
+  C:0A1BH         LINE#         56
+  -------         ENDPROC       I2C_STOP
+  C:088BH         SYMBOL        L?0057
+  -------         PROC          L?0056
+  -------         ENDPROC       L?0056
+  C:088BH         SYMBOL        L?0057
+  -------         PROC          _I2C_WRITE
+  D:0006H         SYMBOL        dat
+  -------         DO            
+  B:0020H.0       SYMBOL        data_bit
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:0890H         LINE#         58
+  C:0892H         LINE#         59
+  C:0892H         LINE#         63
+  C:0894H         LINE#         64
+  C:0894H         LINE#         65
+  C:0898H         LINE#         66
+  C:089CH         LINE#         68
+  C:089FH         LINE#         70
+  C:08A3H         LINE#         71
+  C:08A7H         LINE#         73
+  C:08A9H         LINE#         75
+  C:08A9H         LINE#         77
+  C:08A9H         LINE#         79
+  C:08ACH         LINE#         81
+  C:08B0H         LINE#         82
+  C:08B2H         LINE#         84
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/02/2015  15:50:19  PAGE 5
+
+
+  C:08B5H         LINE#         86
+  C:08B7H         LINE#         87
+  -------         ENDPROC       _I2C_WRITE
+  -------         PROC          I2C_READ
+  -------         DO            
+  B:0020H.0       SYMBOL        rd_bit
+  D:0005H         SYMBOL        i
+  D:0006H         SYMBOL        dat
+  -------         ENDDO         
+  C:0928H         LINE#         89
+  C:0928H         LINE#         90
+  C:0928H         LINE#         94
+  C:092AH         LINE#         96
+  C:092BH         LINE#         97
+  C:092BH         LINE#         98
+  C:092BH         LINE#         100
+  C:092BH         LINE#         102
+  C:092EH         LINE#         104
+  C:0932H         LINE#         105
+  C:0936H         LINE#         106
+  C:093CH         LINE#         108
+  C:093EH         LINE#         109
+  C:0942H         LINE#         111
+  C:0944H         LINE#         112
+  -------         ENDPROC       I2C_READ
+  -------         PROC          I2C_ACK
+  C:0A58H         LINE#         114
+  C:0A58H         LINE#         115
+  C:0A58H         LINE#         116
+  C:0A5AH         LINE#         118
+  C:0A5DH         LINE#         120
+  C:0A60H         LINE#         122
+  C:0A62H         LINE#         123
+  -------         ENDPROC       I2C_ACK
+  -------         PROC          I2C_NOACK
+  C:0A63H         LINE#         125
+  C:0A63H         LINE#         126
+  C:0A63H         LINE#         127
+  C:0A65H         LINE#         129
+  C:0A68H         LINE#         131
+  C:0A6BH         LINE#         133
+  C:0A6DH         LINE#         134
+  -------         ENDPROC       I2C_NOACK
+  -------         PROC          _DS1307_GET
+  D:0004H         SYMBOL        addr
+  -------         DO            
+  D:0006H         SYMBOL        ret
+  -------         ENDDO         
+  C:0945H         LINE#         24
+  C:0947H         LINE#         25
+  C:0947H         LINE#         28
+  C:0947H         LINE#         30
+  C:094AH         LINE#         31
+  C:094FH         LINE#         33
+  C:0952H         LINE#         35
+  C:0957H         LINE#         36
+  C:095CH         LINE#         38
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/02/2015  15:50:19  PAGE 6
+
+
+  C:095FH         LINE#         40
+  C:0961H         LINE#         41
+  -------         ENDPROC       _DS1307_GET
+  -------         PROC          _DS1307_SETTIME
+  D:0004H         SYMBOL        hh
+  D:0002H         SYMBOL        mm
+  D:0003H         SYMBOL        ss
+  C:097DH         LINE#         43
+  C:097DH         LINE#         44
+  C:097DH         LINE#         45
+  C:097DH         LINE#         47
+  C:0980H         LINE#         48
+  C:0985H         LINE#         50
+  C:098AH         LINE#         51
+  C:098FH         LINE#         52
+  C:0994H         LINE#         54
+  -------         ENDPROC       _DS1307_SETTIME
+  -------         PROC          _DS1307_SETDATE
+  D:0004H         SYMBOL        dd
+  D:0002H         SYMBOL        mm
+  D:0003H         SYMBOL        yy
+  C:0997H         LINE#         57
+  C:0997H         LINE#         58
+  C:0997H         LINE#         59
+  C:0997H         LINE#         61
+  C:099AH         LINE#         62
+  C:099FH         LINE#         64
+  C:09A4H         LINE#         65
+  C:09A9H         LINE#         66
+  C:09AEH         LINE#         68
+  -------         ENDPROC       _DS1307_SETDATE
+  -------         PROC          _LCD_DELAY
+  D:0007H         SYMBOL        ms
+  -------         DO            
+  D:0006H         SYMBOL        n
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:09B1H         LINE#         36
+  C:09B1H         LINE#         37
+  C:09B1H         LINE#         40
+  C:09B8H         LINE#         41
+  C:09B8H         LINE#         42
+  C:09C6H         LINE#         43
+  C:09C9H         LINE#         45
+  -------         ENDPROC       _LCD_DELAY
+  -------         PROC          L?0053
+  -------         ENDPROC       L?0053
+  -------         PROC          LCD_ENABLE
+  C:091EH         LINE#         47
+  C:091EH         LINE#         48
+  C:091EH         LINE#         49
+  C:0920H         LINE#         50
+  C:0925H         LINE#         51
+  C:0927H         LINE#         52
+  -------         ENDPROC       LCD_ENABLE
+  -------         PROC          _LCD_COMMAND
+  D:0003H         SYMBOL        command
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/02/2015  15:50:19  PAGE 7
+
+
+  C:0A28H         LINE#         54
+  C:0A2AH         LINE#         55
+  C:0A2AH         LINE#         56
+  C:0A2CH         LINE#         57
+  C:0A2CH         LINE#         58
+  C:0A2CH         LINE#         59
+  C:0A2CH         LINE#         60
+  C:0A2FH         LINE#         61
+  -------         ENDPROC       _LCD_COMMAND
+  -------         PROC          _LCD_PUTC
+  D:0003H         SYMBOL        ascii
+  C:0A34H         LINE#         64
+  C:0A36H         LINE#         65
+  C:0A36H         LINE#         66
+  C:0A38H         LINE#         67
+  C:0A38H         LINE#         68
+  C:0A38H         LINE#         69
+  C:0A38H         LINE#         70
+  C:0A3BH         LINE#         71
+  -------         ENDPROC       _LCD_PUTC
+  -------         PROC          _LCD_PUTS
+  D:000DH         SYMBOL        lcd_string
+  C:08DFH         LINE#         74
+  C:08E5H         LINE#         75
+  C:08E5H         LINE#         76
+  C:08F0H         LINE#         77
+  C:08F0H         LINE#         78
+  C:0901H         LINE#         79
+  C:0903H         LINE#         80
+  -------         ENDPROC       _LCD_PUTS
+  -------         PROC          LCD_INIT
+  C:08B8H         LINE#         82
+  C:08B8H         LINE#         83
+  C:08B8H         LINE#         84
+  C:08BAH         LINE#         85
+  C:08BCH         LINE#         86
+  C:08C1H         LINE#         87
+  C:08C6H         LINE#         88
+  C:08CBH         LINE#         89
+  C:08D0H         LINE#         90
+  C:08D5H         LINE#         91
+  C:08DAH         LINE#         92
+  -------         ENDPROC       LCD_INIT
+  -------         PROC          POWERON
+  -------         DO            
+  D:0003H         SYMBOL        inner
+  D:0007H         SYMBOL        outer
+  -------         ENDDO         
+  C:0962H         LINE#         5
+  C:0962H         LINE#         6
+  C:0962H         LINE#         9
+  C:0964H         LINE#         10
+  C:0964H         LINE#         11
+  C:096AH         LINE#         12
+  C:096EH         LINE#         14
+  C:0971H         LINE#         16
+  C:0973H         LINE#         17
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/02/2015  15:50:19  PAGE 8
+
+
+  C:097CH         LINE#         18
+  -------         ENDPROC       POWERON
+  -------         PROC          _SEND2LCD
+  D:0002H         SYMBOL        value
+  -------         DO            
+  D:0007H         SYMBOL        buf
+  -------         ENDDO         
+  C:09E3H         LINE#         20
+  C:09E5H         LINE#         21
+  C:09E5H         LINE#         22
+  C:09E5H         LINE#         24
+  C:09E8H         LINE#         25
+  C:09EEH         LINE#         27
+  C:09F1H         LINE#         29
+  C:09F5H         LINE#         30
+  C:09F8H         LINE#         32
+  -------         ENDPROC       _SEND2LCD
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        sec
+  D:0009H         SYMBOL        min
+  D:000AH         SYMBOL        hour
+  D:000BH         SYMBOL        date
+  D:000CH         SYMBOL        month
+  D:0001H         SYMBOL        year
+  -------         ENDDO         
+  C:0800H         LINE#         36
+  C:0800H         LINE#         37
+  C:0800H         LINE#         40
+  C:0803H         LINE#         42
+  C:0811H         LINE#         43
+  C:081FH         LINE#         48
+  C:081FH         LINE#         49
+  C:081FH         LINE#         51
+  C:0826H         LINE#         52
+  C:082DH         LINE#         53
+  C:0834H         LINE#         54
+  C:083BH         LINE#         55
+  C:0842H         LINE#         56
+  C:0849H         LINE#         59
+  C:084EH         LINE#         61
+  C:0853H         LINE#         63
+  C:0858H         LINE#         65
+  C:085DH         LINE#         67
+  C:0862H         LINE#         69
+  C:0867H         LINE#         72
+  C:086CH         LINE#         74
+  C:0871H         LINE#         76
+  C:0876H         LINE#         78
+  C:087BH         LINE#         80
+  C:0880H         LINE#         82
+  C:0885H         LINE#         83
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TEST_DS1307
+
+  -------         MODULE        ?C?CLDPTR
+  C:09CAH         PUBLIC        ?C?CLDPTR
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/02/2015  15:50:19  PAGE 9
+
+
+  -------         ENDMOD        ?C?CLDPTR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?TEST_DS1307
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_NOACK?TEST_DS1307
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_SETTIME?TEST_DS1307
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_SETDATE?TEST_DS1307
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 024FH BYTE (28%) *
+******************************************************************************
+
+Program Size: data=17.1 xdata=0 code=631
+LINK/LOCATE RUN COMPLETE.  4 WARNING(S),  0 ERROR(S)
