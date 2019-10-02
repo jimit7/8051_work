@@ -1,0 +1,12 @@
+# Writing all output to: D:\8051\LED interfacing\proteous simulation\led_interfacing.log
+set pad_wire_necking on
+bus diagonal
+fanout 5
+route 50
+clean 2
+route 50 16
+clean 2
+filter 5
+recorner diagonal
+status_file
+
