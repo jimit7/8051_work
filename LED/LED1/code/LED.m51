@@ -1,0 +1,106 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/21/2015  12:12:06  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE ..\Proteus simulation\delay.obj, ..\Proteus simulation\led.obj TO ..\Proteus simulation\LED PRI
+>> NT (.\LED.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  ..\Proteus simulation\delay.obj (DELAY)
+  ..\Proteus simulation\led.obj (LED)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  ..\Proteus simulation\LED (DELAY)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0024H     UNIT         ?PR?_DELAY?DELAY
+            CODE    0027H     0014H     UNIT         ?PR?MAIN?LED
+            CODE    003BH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   ..\Proteus simulation\LED (DELAY)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LED
+
+?PR?MAIN?LED
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  ..\Proteus simulation\LED (DELAY)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0003H         PUBLIC        _delay
+  D:0089H         PUBLIC        TMOD
+  B:0088H.5       PUBLIC        TF0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/21/2015  12:12:06  PAGE 2
+
+
+  B:0088H.4       PUBLIC        TR0
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         3
+  C:0003H         LINE#         4
+  C:0003H         LINE#         6
+  C:0006H         LINE#         7
+  C:0010H         LINE#         8
+  C:0010H         LINE#         9
+  C:0013H         LINE#         10
+  C:0016H         LINE#         11
+  C:0018H         LINE#         12
+  C:001BH         LINE#         13
+  C:001DH         LINE#         14
+  C:001FH         LINE#         15
+  C:0026H         LINE#         16
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+  -------         MODULE        LED
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:0027H         PUBLIC        main
+  B:0090H.0       PUBLIC        LED
+  -------         PROC          MAIN
+  C:0027H         LINE#         6
+  C:0027H         LINE#         7
+  C:0027H         LINE#         8
+  C:0027H         LINE#         9
+  C:0027H         LINE#         10
+  C:0029H         LINE#         11
+  C:0030H         LINE#         12
+  C:0032H         LINE#         13
+  C:0039H         LINE#         14
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LED
+
+Program Size: data=9.0 xdata=0 code=71
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

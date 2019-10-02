@@ -1,0 +1,4 @@
+"delay.obj",
+"led8.obj" 
+TO "LEDs" 
+RAMSIZE(256) 
