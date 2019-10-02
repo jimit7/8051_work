@@ -1,0 +1,4 @@
+"..\Proteus simulation\dcmotor.obj",
+"..\Proteus simulation\delay.obj" 
+TO "..\Proteus simulation\dcmotor" 
+PRINT(".\dcmotor.m51") RAMSIZE(256) 
