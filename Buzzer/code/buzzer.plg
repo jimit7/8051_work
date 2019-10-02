@@ -1,0 +1,16 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\training\8051\8051_programs\Buzzer\code\buzzer.uvproj
+Project File Date:  02/21/2015
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling buzzer.c...
+compiling delay.c...
+linking...
+Program Size: data=9.0 xdata=0 code=71
+creating hex file from "..\Proteus simulation\buzzer"...
+"..\Proteus simulation\buzzer" - 0 Error(s), 0 Warning(s).

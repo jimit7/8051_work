@@ -1,0 +1,4 @@
+"..\Proteus simulation\buzzer.obj",
+"..\Proteus simulation\delay.obj" 
+TO "..\Proteus simulation\buzzer" 
+PRINT(".\buzzer.m51") RAMSIZE(256) 
