@@ -1,0 +1,6 @@
+"..\Proteus simulation\ADC0808_LCD.obj",
+"..\Proteus simulation\delay.obj",
+"..\Proteus simulation\lcd.obj",
+"..\Proteus simulation\ADC0808.obj" 
+TO "..\Proteus simulation\ADC0808_LCD" 
+PRINT(".\ADC0808_LCD.m51") RAMSIZE(256) 

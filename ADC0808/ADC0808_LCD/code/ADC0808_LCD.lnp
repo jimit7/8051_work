@@ -1,0 +1,6 @@
+"ADC0808_LCD.obj",
+"delay.obj",
+"lcd.obj",
+"ADC0808.obj" 
+TO "ADC0808_LCD" 
+RAMSIZE(256) 

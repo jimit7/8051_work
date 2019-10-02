@@ -1,0 +1,56 @@
+C51 COMPILER V9.06   ADC0808_LCD                                                           03/15/2015 17:58:25 PAGE 1   
+
+
+C51 COMPILER V9.06, COMPILATION OF MODULE ADC0808_LCD
+OBJECT MODULE PLACED IN ..\Proteus simulation\ADC0808_LCD.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ADC0808_LCD.c BROWSE DEBUG OBJECTEXTEND OBJECT(..\Proteus simulation\ADC080
+                    -8_LCD.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include "delay.h"
+   3          #include "lcd.h"
+   4          #include "ADC0808.h"
+   5          
+   6          // Main function
+   7          void main()
+   8          {
+   9   1              unsigned char Dout = 0;         // To capture ADC value
+  10   1              
+  11   1      
+  12   1              ADCbegin();                                                     // Initialize ADC
+  13   1              lcdbegin();                                                     // Initialize LCD display
+  14   1              lcdsetCursor(0,1);
+  15   1              lcdprint("Starting...");        // Show Welcome Message
+  16   1              delay(1);                                               // 1 Sec delay
+  17   1              lcdclear();                                     // Clear LCD
+  18   1      
+  19   1              while(1)
+  20   1              {
+  21   2                      Dout = analogRead(A1);          // Read ADC value from Channel 1
+  22   2      
+  23   2              
+  24   2      
+  25   2              //      lcdclear();     
+  26   2                      lcdsetCursor(0,0);                                                                              // Clear LCD
+  27   2                      lcdprint("ADC value = ");                                                       // Display string
+  28   2                      lcdwrite(0x41);
+  29   2      
+  30   2                      delay(1000);                                                                                             // Delay of one second
+  31   2              }
+  32   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     71    ----
+   CONSTANT SIZE    =     25    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

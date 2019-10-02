@@ -1,0 +1,122 @@
+C51 COMPILER V9.06   ADC0808                                                               03/15/2015 17:57:49 PAGE 1   
+
+
+C51 COMPILER V9.06, COMPILATION OF MODULE ADC0808
+OBJECT MODULE PLACED IN ..\Proteus simulation\ADC0808.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ADC0808.c BROWSE DEBUG OBJECTEXTEND OBJECT(..\Proteus simulation\ADC0808.ob
+                    -j)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include "delay.h"
+   3          #include "ADC0808.h"
+   4          
+   5          // Function Purpose: Produce approximate delay in given uSecs.
+   6          void __delay_us(unsigned int d)
+   7          {
+   8   1         unsigned int i, limit;
+   9   1         limit = d/15;
+  10   1      
+  11   1         for(i=0;i<limit;i++);
+  12   1      }
+  13          
+  14          void ADCbegin(void)
+  15          {
+  16   1              Add_A = 0;                // Make output
+  17   1              Add_B = 0;                // Make output 
+  18   1              Add_C = 0;                // Make output
+  19   1              ALE   = 0;                // Make output
+  20   1              EOC   = 1;                // Make input
+  21   1              OE    = 0;                // Make output
+  22   1              START = 0;                // Make output
+  23   1              CLK   = 0;                // Make output
+  24   1              
+  25   1              Data_Bus = 0xFF;  // Make Inputs        
+  26   1      }
+  27          
+  28          
+  29          
+  30          unsigned char analogRead(unsigned char Channel)
+  31          {
+  32   1              unsigned int i = 0;
+  33   1              unsigned int ADC_value = 0;
+  34   1      
+  35   1              // Select Channel
+  36   1              switch(Channel)
+  37   1              {
+  38   2              case A0: Add_C = 0;  Add_B = 0;  Add_A = 0; break;
+  39   2              case A1: Add_C = 0;  Add_B = 0;  Add_A = 1; break;
+  40   2              case A2: Add_C = 0;  Add_B = 1;  Add_A = 0; break;
+  41   2              case A3: Add_C = 0;  Add_B = 1;  Add_A = 1; break;
+  42   2              case A4: Add_C = 1;  Add_B = 0;  Add_A = 0; break;
+  43   2              case A5: Add_C = 1;  Add_B = 0;  Add_A = 1; break;
+  44   2              case A6: Add_C = 1;  Add_B = 1;  Add_A = 0; break;
+  45   2              case A7: Add_C = 1;  Add_B = 1;  Add_A = 1; break;
+  46   2              }          
+  47   1      
+  48   1              __delay_us(HalfCycleDelay);             // 250kHz Frequency
+  49   1              ALE = 1;                                                // Enable Address Latch
+  50   1              CLK = 1;                                                // Make CLK High
+  51   1              __delay_us(HalfCycleDelay);             // 250kHz Frequency
+  52   1              CLK = 0;                                                // Make CLK Low
+  53   1              START = 1;                                              // Start ADC Conversion
+  54   1              __delay_us(HalfCycleDelay);             // 250kHz Frequency
+C51 COMPILER V9.06   ADC0808                                                               03/15/2015 17:57:49 PAGE 2   
+
+  55   1              CLK = 1;                                                // Make CLK High
+  56   1              ALE = 0;                                                // Disable Address Latch
+  57   1              __delay_us(HalfCycleDelay);             // 250kHz Frequency
+  58   1              CLK = 0;                                                // Make CLK Low
+  59   1              START = 0;                                              // Complete the start pulse
+  60   1      
+  61   1              for(i=0;i<2000;i++)
+  62   1              {
+  63   2                      CLK = !CLK;                                     // Toggle Clock
+  64   2                      __delay_us(HalfCycleDelay);     // 250kHz Frequency
+  65   2      
+  66   2                      if(!EOC)                                        // Wait for EOC to be low
+  67   2                              break;
+  68   2              }
+  69   1      
+  70   1              for(i=0;i<2000;i++)
+  71   1              {
+  72   2                      CLK = !CLK;                                     // Toggle Clock
+  73   2                      __delay_us(HalfCycleDelay);     // 250kHz Frequency
+  74   2      
+  75   2                      if(EOC)                                         // Wait for EOC to be High      
+  76   2                              break;
+  77   2              }
+  78   1      
+  79   1              CLK = 0;                                                // Make CLK Low
+  80   1              OE = 1;                                                 // Enable Output
+  81   1              __delay_us(HalfCycleDelay);             // 250kHz Frequency
+  82   1              CLK = 1;                                                // Make CLK High
+  83   1              __delay_us(HalfCycleDelay);             // 250kHz Frequency
+  84   1              CLK = 0;                                                // Make CLK Low
+  85   1              __delay_us(HalfCycleDelay);             // 250kHz Frequency
+  86   1              CLK = 1;                                                // Make CLK High
+  87   1      
+  88   1              ADC_value = Data_Bus;                   // Read value
+  89   1      
+  90   1              __delay_us(HalfCycleDelay);             // 250kHz Frequency
+  91   1              OE = 0;                                                 // Disable Output
+  92   1              CLK = 0;                                                // Make CLK Low
+  93   1              __delay_us(HalfCycleDelay);             // 250kHz Frequency
+  94   1      
+  95   1              return ADC_value;                               // Return ADC value
+  96   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    248    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

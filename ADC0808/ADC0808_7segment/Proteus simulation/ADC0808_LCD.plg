@@ -1,0 +1,29 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\training\8051\8051_programs\ADC0808\ADC0808_7segment\code\ADC0808_7segment.uvproj
+Project File Date:  03/15/2015
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling ADC0808_7segment.c...
+ADC0808_7segment.c(37): error C202: 'num': undefined identifier
+ADC0808_7segment.c(42): error C202: 'num': undefined identifier
+ADC0808_7segment.c(47): error C202: 'num': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling ADC0808_7segment.c...
+linking...
+Program Size: data=22.0 xdata=0 code=643
+creating hex file from "..\Proteus simulation\ADC0808_7segment"...
+"..\Proteus simulation\ADC0808_7segment" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling delay.c...
+compiling ADC0808.c...
+compiling ADC0808_7segment.c...
+linking...
+Program Size: data=22.0 xdata=0 code=636
+creating hex file from "..\Proteus simulation\ADC0808_7segment"...
+"..\Proteus simulation\ADC0808_7segment" - 0 Error(s), 0 Warning(s).

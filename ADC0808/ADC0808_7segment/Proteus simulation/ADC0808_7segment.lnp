@@ -1,0 +1,5 @@
+"..\Proteus simulation\delay.obj",
+"..\Proteus simulation\ADC0808.obj",
+"..\Proteus simulation\ADC0808_7segment.obj" 
+TO "..\Proteus simulation\ADC0808_7segment" 
+PRINT(".\ADC0808_7segment.m51") RAMSIZE(256) 
