@@ -1,0 +1,5 @@
+"..\Proteus simulation\delay.obj",
+"..\Proteus simulation\lcd.obj",
+"..\Proteus simulation\lcd_display.obj" 
+TO "..\Proteus simulation\lcd_display" 
+PRINT(".\lcd_display.m51") RAMSIZE(256) 

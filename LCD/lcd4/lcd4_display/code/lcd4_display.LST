@@ -1,0 +1,38 @@
+C51 COMPILER V9.06   LCD4_DISPLAY                                                          02/22/2015 15:12:09 PAGE 1   
+
+
+C51 COMPILER V9.06, COMPILATION OF MODULE LCD4_DISPLAY
+OBJECT MODULE PLACED IN ..\Proteus simulation\lcd4_display.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE lcd4_display.c BROWSE DEBUG OBJECTEXTEND OBJECT(..\Proteus simulation\lcd4_
+                    -display.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include "lcd.h"
+   3          #include "delay.h"
+   4          
+   5          void main()
+   6          {
+   7   1      
+   8   1              lcdbegin();
+   9   1              lcdprint("Jignesh");
+  10   1      
+  11   1              lcdcmd(0xC0);
+  12   1              lcdprint("Patoliya");
+  13   1              while(1);
+  14   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     28    ----
+   CONSTANT SIZE    =     17    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,5 @@
+"delay.obj",
+"lcd.obj",
+"lcd4_display.obj" 
+TO "lcd4_display" 
+RAMSIZE(256) 
