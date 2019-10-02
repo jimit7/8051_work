@@ -1,0 +1,408 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\training\8051\8051_programs\ReversePowerProtection_ADC0808\ReversePower.uvproj
+Project File Date:  03/25/2015
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+main.c(16): warning C206: 'adcbegin': missing function-prototype
+compiling ADC0808.c...
+compiling delay.c...
+compiling lcd.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ANALOGREAD?ADC0808
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSETCURSOR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+Program Size: data=19.0 xdata=0 code=694
+"ReversePower" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+main.c(16): warning C206: 'adcbegin': missing function-prototype
+compiling ADC0808.c...
+compiling delay.c...
+compiling lcd.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ANALOGREAD?ADC0808
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSETCURSOR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+Program Size: data=19.0 xdata=0 code=694
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ANALOGREAD?ADC0808
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSETCURSOR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+Program Size: data=19.0 xdata=0 code=694
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ANALOGREAD?ADC0808
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSETCURSOR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+Program Size: data=19.0 xdata=0 code=694
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADCBEGIN?ADC0808
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ANALOGREAD?ADC0808
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSETCURSOR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+Program Size: data=19.0 xdata=0 code=691
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADCBEGIN?ADC0808
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ANALOGREAD?ADC0808
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSETCURSOR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+Program Size: data=19.0 xdata=0 code=691
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADCBEGIN?ADC0808
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ANALOGREAD?ADC0808
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+Program Size: data=18.0 xdata=0 code=697
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+Program Size: data=15.0 xdata=0 code=720
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=15.0 xdata=0 code=723
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDPRINT?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+Program Size: data=18.0 xdata=0 code=697
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDPRINT?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+Program Size: data=19.0 xdata=0 code=707
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDBEGIN?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDPRINT?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+Program Size: data=19.0 xdata=0 code=701
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+main.c(22): warning C206: 'setvalue': missing function-prototype
+main.c(37): error C231: 'setvalue': redefinition
+Target not created
+Build target 'Target 1'
+compiling main.c...
+main.c(44): warning C206: 'lcd_display': missing function-prototype
+main.c(44): error C267: 'lcd_display': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=17.0 xdata=0 code=854
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=17.0 xdata=0 code=987
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+main.c(21): warning C206: 'lcdclear': missing function-prototype
+main.c(26): warning C206: 'lcdsetCursor': missing function-prototype
+main.c(26): error C267: 'lcdsetCursor': requires ANSI-style prototype
+main.c(30): error C202: 'LCDport': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+main.c(21): warning C206: 'lcdclear': missing function-prototype
+main.c(22): warning C206: 'setvalue': missing function-prototype
+main.c(26): warning C206: 'lcdsetCursor': missing function-prototype
+main.c(26): error C267: 'lcdsetCursor': requires ANSI-style prototype
+main.c(30): error C202: 'LCDport': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+main.c(22): warning C206: 'setvalue': missing function-prototype
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDBEGIN?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDPRINT?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETVALUE
+    MODULE:  .\Proteus simulation\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETVALUE
+    MODULE:  .\Proteus simulation\main.obj (MAIN)
+    ADDRESS: 02AAH
+Program Size: data=21.0 xdata=0 code=840
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+main.c(22): warning C206: 'setvalue': missing function-prototype
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDBEGIN?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDPRINT?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETVALUE
+    MODULE:  .\Proteus simulation\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETVALUE
+    MODULE:  .\Proteus simulation\main.obj (MAIN)
+    ADDRESS: 02AAH
+Program Size: data=21.0 xdata=0 code=840
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDBEGIN?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDPRINT?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETVALUE
+    MODULE:  .\Proteus simulation\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETVALUE
+    MODULE:  .\Proteus simulation\main.obj (MAIN)
+    ADDRESS: 02AAH
+Program Size: data=21.0 xdata=0 code=840
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+main.c(22): warning C206: 'setvalue': missing function-prototype
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDBEGIN?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDPRINT?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSETCURSOR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETVALUE
+    MODULE:  .\Proteus simulation\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETVALUE
+    MODULE:  .\Proteus simulation\main.obj (MAIN)
+    ADDRESS: 02C9H
+Program Size: data=22.0 xdata=0 code=834
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+main.c(22): warning C206: 'lcdclear': missing function-prototype
+main.c(23): warning C206: 'setvalue': missing function-prototype
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDBEGIN?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDPRINT?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSETCURSOR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETVALUE
+    MODULE:  .\Proteus simulation\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETVALUE
+    MODULE:  .\Proteus simulation\main.obj (MAIN)
+    ADDRESS: 02C9H
+Program Size: data=22.0 xdata=0 code=834
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 8 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDBEGIN?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDPRINT?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSETCURSOR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+Program Size: data=22.0 xdata=0 code=828
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDBEGIN?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDPRINT?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSETCURSOR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+Program Size: data=22.0 xdata=0 code=828
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDBEGIN?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDPRINT?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSETCURSOR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+Program Size: data=22.0 xdata=0 code=828
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling ADC0808.c...
+compiling delay.c...
+compiling lcd.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDBEGIN?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDPRINT?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSETCURSOR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+Program Size: data=22.0 xdata=0 code=828
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDBEGIN?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDPRINT?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSETCURSOR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+Program Size: data=22.0 xdata=0 code=828
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDBEGIN?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDPRINT?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSETCURSOR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITE?LCD
+Program Size: data=22.0 xdata=0 code=828
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=17.0 xdata=0 code=863
+creating hex file from ".\Proteus simulation\ReversePower"...
+".\Proteus simulation\ReversePower" - 0 Error(s), 0 Warning(s).

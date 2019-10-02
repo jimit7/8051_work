@@ -1,0 +1,138 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        04/02/2015  10:27:26  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE keypad.obj, main.obj TO Keypad_LED RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  keypad.obj (KEYPAD)
+  main.obj (MAIN)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  Keypad_LED (KEYPAD)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         _DATA_GROUP_
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     00E3H     UNIT         ?PR?GET_KEY?KEYPAD
+            CODE    00E6H     001CH     UNIT         ?PR?_DELAY_US?KEYPAD
+            CODE    0102H     000CH     UNIT         ?C_C51STARTUP
+            CODE    010EH     0007H     UNIT         ?PR?MAIN?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   Keypad_LED (KEYPAD)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                  0008H    0001H
+  +--> ?PR?GET_KEY?KEYPAD
+
+?PR?GET_KEY?KEYPAD             -----    -----
+  +--> ?PR?_DELAY_US?KEYPAD
+
+
+
+SYMBOL TABLE OF MODULE:  Keypad_LED (KEYPAD)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        KEYPAD
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/02/2015  10:27:26  PAGE 2
+
+
+  C:00EAH         PUBLIC        _delay_us
+  C:0003H         PUBLIC        get_key
+  B:0090H.4       PUBLIC        C1
+  B:0090H.5       PUBLIC        C2
+  B:0090H.6       PUBLIC        C3
+  B:0090H.7       PUBLIC        C4
+  B:0090H.0       PUBLIC        RowA
+  B:0090H.1       PUBLIC        RowB
+  B:0090H.2       PUBLIC        RowC
+  B:0090H.3       PUBLIC        RowD
+  C:00E6H         SYMBOL        L?0056
+  -------         PROC          L?0055
+  -------         ENDPROC       L?0055
+  C:00E6H         SYMBOL        L?0056
+  -------         PROC          _DELAY_US
+  D:0006H         SYMBOL        a
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:00EAH         LINE#         4
+  C:00EAH         LINE#         5
+  C:00EAH         LINE#         7
+  C:0101H         LINE#         8
+  -------         ENDPROC       _DELAY_US
+  -------         PROC          GET_KEY
+  C:0003H         LINE#         10
+  C:0003H         LINE#         11
+  C:0003H         LINE#         12
+  C:000BH         LINE#         14
+  C:0017H         LINE#         15
+  C:0023H         LINE#         16
+  C:002FH         LINE#         17
+  C:003BH         LINE#         19
+  C:0043H         LINE#         21
+  C:004FH         LINE#         22
+  C:005BH         LINE#         23
+  C:0067H         LINE#         24
+  C:0073H         LINE#         26
+  C:007BH         LINE#         28
+  C:0087H         LINE#         29
+  C:0093H         LINE#         30
+  C:009FH         LINE#         31
+  C:00ABH         LINE#         33
+  C:00B3H         LINE#         35
+  C:00BFH         LINE#         36
+  C:00CBH         LINE#         37
+  C:00D7H         LINE#         38
+  C:00E3H         LINE#         40
+  C:00E5H         LINE#         41
+  -------         ENDPROC       GET_KEY
+  -------         ENDMOD        KEYPAD
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:010EH         PUBLIC        main
+  -------         PROC          MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/02/2015  10:27:26  PAGE 3
+
+
+  -------         DO            
+  D:0008H         SYMBOL        key
+  -------         ENDDO         
+  C:010EH         LINE#         4
+  C:010EH         LINE#         5
+  C:010EH         LINE#         9
+  C:010EH         LINE#         10
+  C:010EH         LINE#         11
+  C:0113H         LINE#         12
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+Program Size: data=10.0 xdata=0 code=277
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

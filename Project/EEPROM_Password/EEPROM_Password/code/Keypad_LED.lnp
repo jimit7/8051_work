@@ -1,0 +1,4 @@
+"keypad.obj",
+"main.obj" 
+TO "Keypad_LED" 
+RAMSIZE(256) 

@@ -1,0 +1,334 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/24/2015  00:49:10  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE Ultrasonic_LCD.obj, delay.obj, lcd.obj TO Ultrasonic_LCD RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Ultrasonic_LCD.obj (ULTRASONIC_LCD)
+  delay.obj (DELAY)
+  lcd.obj (LCD)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?UIDIV)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  Ultrasonic_LCD (ULTRASONIC_LCD)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0005H     UNIT         _DATA_GROUP_
+            DATA    000DH     0004H     UNIT         ?DT?ULTRASONIC_LCD
+            IDATA   0011H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     0082H     UNIT         ?C?LIB_CODE
+            CODE    0111H     0049H     UNIT         ?PR?MAIN?ULTRASONIC_LCD
+            CODE    015AH     0042H     UNIT         ?PR?_LCDWRITE?LCD
+            CODE    019CH     003EH     UNIT         ?PR?GETDISTANCE?ULTRASONIC_LCD
+            CODE    01DAH     003CH     UNIT         ?PR?LCDBEGIN?LCD
+            CODE    0216H     002BH     UNIT         ?PR?_LCDPRINT?LCD
+            CODE    0241H     0024H     UNIT         ?PR?_DELAY?DELAY
+            CODE    0265H     0019H     UNIT         ?PR?_LCDDATA?LCD
+            CODE    027EH     0014H     UNIT         ?PR?_LCDSETCURSOR?LCD
+            CODE    0292H     0012H     UNIT         ?PR?_LCDCMD?LCD
+            CODE    02A4H     000FH     UNIT         ?CO?ULTRASONIC_LCD
+            CODE    02B3H     000CH     UNIT         ?PR?LCDCLEAR?LCD
+            CODE    02BFH     0009H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   Ultrasonic_LCD (ULTRASONIC_LCD)
+
+
+SEGMENT                                  DATA_GROUP 
+  +--> CALLED SEGMENT                  START    LENGTH
+------------------------------------------------------
+?C_C51STARTUP                          -----    -----
+  +--> ?PR?MAIN?ULTRASONIC_LCD
+  +--> ?C_INITSEG
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/24/2015  00:49:10  PAGE 2
+
+
+?PR?MAIN?ULTRASONIC_LCD                -----    -----
+  +--> ?PR?LCDBEGIN?LCD
+  +--> ?PR?LCDCLEAR?LCD
+  +--> ?CO?ULTRASONIC_LCD
+  +--> ?PR?_LCDPRINT?LCD
+  +--> ?PR?_DELAY?DELAY
+  +--> ?PR?GETDISTANCE?ULTRASONIC_LCD
+  +--> ?PR?_LCDSETCURSOR?LCD
+  +--> ?PR?_LCDWRITE?LCD
+
+?PR?LCDBEGIN?LCD                       -----    -----
+  +--> ?PR?_LCDCMD?LCD
+  +--> ?PR?_DELAY?DELAY
+
+?PR?_LCDCMD?LCD                        -----    -----
+  +--> ?PR?_DELAY?DELAY
+
+?PR?LCDCLEAR?LCD                       -----    -----
+  +--> ?PR?_LCDCMD?LCD
+  +--> ?PR?_DELAY?DELAY
+
+?PR?_LCDPRINT?LCD                      0008H    0005H
+  +--> ?PR?_LCDDATA?LCD
+
+?PR?_LCDDATA?LCD                       -----    -----
+  +--> ?PR?_DELAY?DELAY
+
+?PR?_LCDSETCURSOR?LCD                  0008H    0001H
+  +--> ?PR?_LCDCMD?LCD
+
+?PR?_LCDWRITE?LCD                      0008H    0002H
+  +--> ?PR?_LCDDATA?LCD
+
+
+
+SYMBOL TABLE OF MODULE:  Ultrasonic_LCD (ULTRASONIC_LCD)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ULTRASONIC_LCD
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A0H.1       PUBLIC        echo
+  C:0111H         PUBLIC        main
+  D:000DH         PUBLIC        count
+  D:0089H         PUBLIC        TMOD
+  B:0088H.7       PUBLIC        TF1
+  D:008DH         PUBLIC        TH1
+  D:000FH         PUBLIC        cm
+  B:00A0H.0       PUBLIC        tri
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  C:019CH         PUBLIC        getDistance
+  -------         PROC          MAIN
+  C:0111H         LINE#         18
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/24/2015  00:49:10  PAGE 3
+
+
+  C:0111H         LINE#         19
+  C:0111H         LINE#         20
+  C:0114H         LINE#         21
+  C:0117H         LINE#         22
+  C:0120H         LINE#         23
+  C:0127H         LINE#         24
+  C:0127H         LINE#         25
+  C:0127H         LINE#         26
+  C:012EH         LINE#         27
+  C:0135H         LINE#         28
+  C:013CH         LINE#         29
+  C:0143H         LINE#         30
+  C:014CH         LINE#         31
+  C:0153H         LINE#         32
+  C:0158H         LINE#         33
+  -------         ENDPROC       MAIN
+  -------         PROC          GETDISTANCE
+  -------         DO            
+  C:01BFH         SYMBOL        again
+  -------         ENDDO         
+  C:019CH         LINE#         39
+  C:019CH         LINE#         40
+  C:019CH         LINE#         41
+  C:019EH         LINE#         42
+  C:01A0H         LINE#         44
+  C:01A3H         LINE#         45
+  C:01A6H         LINE#         46
+  C:01A9H         LINE#         48
+  C:01ABH         LINE#         49
+  C:01ACH         LINE#         50
+  C:01ACH         LINE#         51
+  C:01ACH         LINE#         52
+  C:01AEH         LINE#         53
+  C:01AFH         LINE#         54
+  C:01B0H         LINE#         55
+  C:01B1H         LINE#         56
+  C:01B2H         LINE#         57
+  C:01B3H         LINE#         58
+  C:01B4H         LINE#         59
+  C:01B5H         LINE#         60
+  C:01B6H         LINE#         61
+  C:01B7H         LINE#         62
+  C:01B8H         LINE#         63
+  C:01BAH         LINE#         65
+  C:01BCH         LINE#         66
+  C:01BFH         LINE#         67
+  C:01BFH         LINE#         68
+  C:01C1H         LINE#         69
+  C:01C4H         LINE#         70
+  C:01C6H         LINE#         71
+  C:01C8H         LINE#         72
+  C:01D0H         LINE#         73
+  C:01D3H         LINE#         74
+  C:01D3H         LINE#         75
+  C:01D5H         LINE#         76
+  C:01D5H         LINE#         79
+  C:01D5H         LINE#         80
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/24/2015  00:49:10  PAGE 4
+
+
+  C:01D9H         LINE#         81
+  C:01D9H         LINE#         82
+  C:01D9H         LINE#         83
+  -------         ENDPROC       GETDISTANCE
+  -------         ENDMOD        ULTRASONIC_LCD
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0241H         PUBLIC        _delay
+  D:0089H         PUBLIC        TMOD
+  B:0088H.5       PUBLIC        TF0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0241H         LINE#         3
+  C:0241H         LINE#         4
+  C:0241H         LINE#         6
+  C:0244H         LINE#         7
+  C:024EH         LINE#         8
+  C:024EH         LINE#         9
+  C:0251H         LINE#         10
+  C:0254H         LINE#         11
+  C:0256H         LINE#         12
+  C:0259H         LINE#         13
+  C:025BH         LINE#         14
+  C:025DH         LINE#         15
+  C:0264H         LINE#         16
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+  -------         MODULE        LCD
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:027EH         PUBLIC        _lcdsetCursor
+  B:00B0H.7       PUBLIC        EN
+  B:00B0H.5       PUBLIC        RS
+  B:00B0H.6       PUBLIC        RW
+  C:01DAH         PUBLIC        lcdbegin
+  C:02B3H         PUBLIC        lcdclear
+  C:026CH         PUBLIC        _lcddata
+  C:015AH         PUBLIC        _lcdwrite
+  C:0216H         PUBLIC        _lcdprint
+  C:0292H         PUBLIC        _lcdcmd
+  -------         PROC          _LCDCMD
+  D:0007H         SYMBOL        a
+  C:0292H         LINE#         5
+  C:0292H         LINE#         6
+  C:0292H         LINE#         7
+  C:0294H         LINE#         8
+  C:0296H         LINE#         9
+  C:0298H         LINE#         10
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/24/2015  00:49:10  PAGE 5
+
+
+  C:029AH         LINE#         11
+  C:02A1H         LINE#         12
+  C:02A3H         LINE#         13
+  -------         ENDPROC       _LCDCMD
+  -------         PROC          L?0014
+  -------         ENDPROC       L?0014
+  -------         PROC          _LCDDATA
+  D:0007H         SYMBOL        a
+  C:026CH         LINE#         15
+  C:026CH         LINE#         16
+  C:026CH         LINE#         17
+  C:026EH         LINE#         18
+  C:0270H         LINE#         19
+  C:0272H         LINE#         20
+  C:0274H         LINE#         21
+  C:027BH         LINE#         22
+  C:027DH         LINE#         23
+  -------         ENDPROC       _LCDDATA
+  -------         PROC          LCDBEGIN
+  C:01DAH         LINE#         25
+  C:01DAH         LINE#         26
+  C:01DAH         LINE#         27
+  C:01DFH         LINE#         28
+  C:01E6H         LINE#         29
+  C:01EBH         LINE#         30
+  C:01F2H         LINE#         31
+  C:01F7H         LINE#         32
+  C:01FEH         LINE#         33
+  C:0203H         LINE#         34
+  C:020AH         LINE#         35
+  C:020FH         LINE#         36
+  -------         ENDPROC       LCDBEGIN
+  -------         PROC          _LCDPRINT
+  D:0008H         SYMBOL        buffer
+  -------         DO            
+  D:000BH         SYMBOL        i
+  -------         ENDDO         
+  C:0216H         LINE#         39
+  C:021CH         LINE#         40
+  C:021CH         LINE#         41
+  C:0221H         LINE#         42
+  C:0233H         LINE#         43
+  C:0233H         LINE#         44
+  C:0236H         LINE#         45
+  C:023EH         LINE#         46
+  C:0240H         LINE#         47
+  -------         ENDPROC       _LCDPRINT
+  -------         PROC          _LCDSETCURSOR
+  D:0008H         SYMBOL        col
+  D:0005H         SYMBOL        row
+  C:027EH         LINE#         49
+  C:0280H         LINE#         50
+  C:0280H         LINE#         51
+  C:0283H         LINE#         52
+  C:0283H         LINE#         53
+  C:0287H         LINE#         54
+  C:0289H         LINE#         56
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/24/2015  00:49:10  PAGE 6
+
+
+  C:0289H         LINE#         57
+  C:0291H         LINE#         58
+  C:0291H         LINE#         59
+  -------         ENDPROC       _LCDSETCURSOR
+  -------         PROC          LCDCLEAR
+  C:02B3H         LINE#         61
+  C:02B3H         LINE#         62
+  C:02B3H         LINE#         63
+  C:02B8H         LINE#         64
+  -------         ENDPROC       LCDCLEAR
+  -------         PROC          _LCDWRITE
+  D:0008H         SYMBOL        w
+  C:015AH         LINE#         67
+  C:015EH         LINE#         68
+  C:015EH         LINE#         71
+  C:0165H         LINE#         72
+  C:017DH         LINE#         73
+  -------         ENDPROC       _LCDWRITE
+  -------         ENDMOD        LCD
+
+  -------         MODULE        ?C?CLDOPTR
+  C:008FH         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?UIDIV
+  C:00BCH         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+Program Size: data=18.0 xdata=0 code=712
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

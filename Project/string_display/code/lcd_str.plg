@@ -1,0 +1,44 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\training\8051\8051_programs\LCD\string_display\code\lcd_str.uvproj
+Project File Date:  02/21/2015
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling delay.c...
+compiling lcd.c...
+lcd.c(5): error C202: 'LCDport': undefined identifier
+lcd.c(6): error C202: 'RS': undefined identifier
+lcd.c(7): error C202: 'RW': undefined identifier
+lcd.c(8): error C202: 'EN': undefined identifier
+compiling lcd_display.c...
+Target not created
+Build target 'Target 1'
+compiling lcd.c...
+lcd.c(10): warning C206: 'delay': missing function-prototype
+lcd.c(10): error C267: 'delay': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling lcd.c...
+linking...
+Program Size: data=14.0 xdata=0 code=275
+"lcd_str" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling delay.c...
+compiling lcd.c...
+compiling lcd_display.c...
+linking...
+Program Size: data=14.0 xdata=0 code=275
+"..\Proteus simulation\lcd_display" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=14.0 xdata=0 code=275
+"..\Proteus simulation\lcd_display" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=14.0 xdata=0 code=275
+creating hex file from "..\Proteus simulation\lcd_display"...
+"..\Proteus simulation\lcd_display" - 0 Error(s), 0 Warning(s).

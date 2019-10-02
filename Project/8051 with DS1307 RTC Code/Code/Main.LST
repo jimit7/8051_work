@@ -1,0 +1,128 @@
+C51 COMPILER V9.06   MAIN                                                                  04/02/2015 02:27:30 PAGE 1   
+
+
+C51 COMPILER V9.06, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN Main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*  Name     : main.c
+   2           
+   3           *  Revision : None
+   4           */
+   5          #include "Includes.h"
+   6          
+   7          unsigned char eepromRead(unsigned char);
+   8          
+   9          
+  10          
+  11          void Write_Byte_To_eeprom(unsigned char Address1, unsigned char DataByte1)
+  12          {
+  13   1              I2C_Start();                                                                            // Start i2c communication
+  14   1      
+  15   1              // Send i2c address of DS1307 with write command
+  16   1              while(I2C_Write_Byte(Device_Address_EEPROM + 0) == 1)// Wait until device is free
+  17   1              {       I2C_Start();    }               
+  18   1      
+  19   1              I2C_Write_Byte(Address1);                                                       // Write Address byte
+  20   1              I2C_Write_Byte(DataByte1);                                                      // Write data byte
+  21   1              I2C_Stop();                                                                                     // Stop i2c communication
+  22   1      }
+  23          
+  24          
+  25          
+  26          // Function Purpose: Read_Byte_From_DS1307_RTC reads a single byte from given address
+  27          // Address can have any value fromm 0 to 0xFF.
+  28          unsigned char eepromRead(unsigned char Address11)
+  29          {
+  30   1              unsigned char  Byte = 0;                                                                // Variable to store Received byte
+  31   1      
+  32   1              I2C_Start();                                                                            // Start i2c communication
+  33   1      
+  34   1              // Send i2c address of DS1307 with write command
+  35   1              while(I2C_Write_Byte(Device_Address_EEPROM + 0) == 1)// Wait until device is free
+  36   1              {       I2C_Start();    }               
+  37   1      
+  38   1              I2C_Write_Byte(Address11);                                                      // Write Address byte
+  39   1              I2C_ReStart();                                                                          // Restart i2c
+  40   1      
+  41   1              // Send i2c address of DS1307 RTC with read command     
+  42   1              I2C_Write_Byte(Device_Address_EEPROM + 1);              
+  43   1      
+  44   1              Byte = I2C_Read_Byte();                                                         // Read byte from EEPROM
+  45   1      
+  46   1              // Make SCK low, so that slave can stop driving SDA pin
+  47   1              // Send a NACK to indiacate single byte read is complete
+  48   1              I2C_Send_NACK();
+  49   1      
+  50   1              // Send start bit and then stop bit to stop transmission
+  51   1              Set_SDA_Low;                            // Make SDA Low
+  52   1              __delay_us(HalfBitDelay);       // Half bit delay
+  53   1              Set_SDA_High;                           // Make SDA high
+  54   1              __delay_us(HalfBitDelay);       // Half bit delay
+  55   1      
+C51 COMPILER V9.06   MAIN                                                                  04/02/2015 02:27:30 PAGE 2   
+
+  56   1              return Byte;                            // Return the byte received from 24LC64 EEPROM
+  57   1      }
+  58          
+  59          
+  60          
+  61          
+  62                                   
+  63                  
+  64          
+  65          
+  66          
+  67                  
+  68                  
+  69           
+  70          
+  71          
+  72          
+  73          // Main function
+  74          void main()
+  75          {       
+  76   1      
+  77   1              unsigned char i,j;
+  78   1              InitI2C();      // Initialize i2c pins  
+  79   1              lcdbegin();
+  80   1              delay(10);
+  81   1      //      lcdclear();
+  82   1      //      lcd
+  83   1              lcdprint("Value =");
+  84   1              Write_Byte_To_eeprom(0x00,06);
+  85   1          i = eepromRead(0x00);
+  86   1              lcdsetCursor(8,0);
+  87   1              lcdwrite(i);
+  88   1              lcdsetCursor(0,1);
+  89   1              j = get_key;
+  90   1              lcdwrite(j);
+  91   1              while(1);
+  92   1      //      {
+  93   1      //      
+  94   1      //      Write_Byte_To_eeprom(0x01,m1);
+  95   1      //      Write_Byte_To_eeprom(0x02,h2);
+  96   1      //      Write_Byte_To_eeprom(0x03,m2);
+  97   1      //      }
+  98   1      
+  99   1      
+ 100   1       
+ 101   1              
+ 102   1      
+ 103   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    158    ----
+   CONSTANT SIZE    =      8    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,5 @@
+"Ultrasonic_LCD.obj",
+"delay.obj",
+"lcd.obj" 
+TO "Ultrasonic_LCD" 
+RAMSIZE(256) 

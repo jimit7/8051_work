@@ -1,0 +1,77 @@
+C51 COMPILER V9.06   EEPROM                                                                04/14/2015 14:35:01 PAGE 1   
+
+
+C51 COMPILER V9.06, COMPILATION OF MODULE EEPROM
+OBJECT MODULE PLACED IN ..\Simulation\EEPROM.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE EEPROM.c BROWSE DEBUG OBJECTEXTEND OBJECT(..\Simulation\EEPROM.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #include "delay.h"
+   3          #include "I2C.h"
+   4          
+   5          
+   6          void EEPROMWrite(unsigned char Address1, unsigned char DataByte1)
+   7          {
+   8   1              I2C_Start();                                                                            // Start i2c communication
+   9   1      
+  10   1              // Send i2c address of DS1307 with write command
+  11   1              while(I2C_Write_Byte(Device_Address_EEPROM + 0) == 1)// Wait until device is free
+  12   1              {       I2C_Start();    }               
+  13   1      
+  14   1              I2C_Write_Byte(Address1);                                                       // Write Address byte
+  15   1              I2C_Write_Byte(DataByte1);                                                      // Write data byte
+  16   1              I2C_Stop();                                                                                     // Stop i2c communication
+  17   1      }
+  18          
+  19          
+  20          
+  21          // Function Purpose: Read_Byte_From_DS1307_RTC reads a single byte from given address
+  22          // Address can have any value fromm 0 to 0xFF.
+  23          unsigned char EEPROMRead(unsigned char Address11)
+  24          {
+  25   1              unsigned char  Byte = 0;                                                                // Variable to store Received byte
+  26   1      
+  27   1              I2C_Start();                                                                            // Start i2c communication
+  28   1      
+  29   1              // Send i2c address of DS1307 with write command
+  30   1              while(I2C_Write_Byte(Device_Address_EEPROM + 0) == 1)// Wait until device is free
+  31   1              {       I2C_Start();    }               
+  32   1      
+  33   1              I2C_Write_Byte(Address11);                                                      // Write Address byte
+  34   1              I2C_ReStart();                                                                          // Restart i2c
+  35   1      
+  36   1              // Send i2c address of DS1307 RTC with read command     
+  37   1              I2C_Write_Byte(Device_Address_EEPROM + 1);              
+  38   1      
+  39   1              Byte = I2C_Read_Byte();                                                         // Read byte from EEPROM
+  40   1      
+  41   1              // Make SCK low, so that slave can stop driving SDA pin
+  42   1              // Send a NACK to indiacate single byte read is complete
+  43   1              I2C_Send_NACK();
+  44   1      
+  45   1              // Send start bit and then stop bit to stop transmission
+  46   1              Set_SDA_Low;                            // Make SDA Low
+  47   1              __delay_us(HalfBitDelay);       // Half bit delay
+  48   1              Set_SDA_High;                           // Make SDA high
+  49   1              __delay_us(HalfBitDelay);       // Half bit delay
+  50   1      
+  51   1              return Byte;                            // Return the byte received from 24LC64 EEPROM
+  52   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+C51 COMPILER V9.06   EEPROM                                                                04/14/2015 14:35:01 PAGE 2   
+
+   CODE SIZE        =     92    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

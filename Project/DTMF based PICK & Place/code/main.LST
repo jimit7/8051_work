@@ -1,0 +1,244 @@
+C51 COMPILER V9.06   MAIN                                                                  04/03/2015 19:54:45 PAGE 1   
+
+
+C51 COMPILER V9.06, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include "delay.h"
+   3          #include "lcd.h"
+   4          #define dataPort P1
+   5          
+   6          sbit MP1 = P2^0;
+   7          sbit MN1 = P2^1;
+   8          
+   9          sbit MP2 = P3^2;
+  10          sbit MN2 = P3^3;
+  11          
+  12          sbit MP3 = P2^4;
+  13          sbit MN3 = P2^5;
+  14          
+  15          sbit MP4 = P2^6;
+  16          sbit MN4 = P2^7;
+  17          
+  18          void main()
+  19          {
+  20   1              dataPort = 0xFF;
+  21   1              lcdbegin();
+  22   1              lcdclear();
+  23   1              lcdsetCursor(0,0);
+  24   1              lcdprint("Welcome");
+  25   1      
+  26   1              while(1)
+  27   1              {
+  28   2                      dataPort &= 0x0F;
+  29   2      
+  30   2                      switch(dataPort)
+  31   2                      {
+  32   3                              case 2:
+  33   3                                      
+  34   3                                  lcdsetCursor(0,0);
+  35   3                                      lcdprint("Forward            ");
+  36   3      
+  37   3                                      MP1 = 1;
+  38   3                                      MN1 = 0;
+  39   3      
+  40   3                                      MP2 = 1;
+  41   3                                      MN2 = 0;
+  42   3      
+  43   3                                      MP3 = 0;
+  44   3                                      MN3 = 0;
+  45   3      
+  46   3                                      MP4 = 0;
+  47   3                                      MN4 = 0;
+  48   3      
+  49   3                                      delay(100);
+  50   3                                      break;
+  51   3                              
+  52   3                              case 8:
+  53   3                                      
+  54   3                                      lcdsetCursor(0,0);
+  55   3                                      lcdprint("Reverse         ");
+C51 COMPILER V9.06   MAIN                                                                  04/03/2015 19:54:45 PAGE 2   
+
+  56   3      
+  57   3                                      MP1 = 0;
+  58   3                                      MN1 = 1;
+  59   3      
+  60   3                                      MP2 = 0;
+  61   3                                      MN2 = 1;
+  62   3      
+  63   3                                      MP3 = 0;
+  64   3                                      MN3 = 0;
+  65   3      
+  66   3                                      MP4 = 0;
+  67   3                                      MN4 = 0;
+  68   3                                      delay(100);
+  69   3                                      break;
+  70   3      
+  71   3                              case 1:
+  72   3      
+  73   3                                      lcdsetCursor(0,0);
+  74   3                                      lcdprint("Pick             ");
+  75   3                                                                      
+  76   3                                      MP1 = 0;
+  77   3                                      MN1 = 0;
+  78   3      
+  79   3                                      MP2 = 0;
+  80   3                                      MN2 = 0;
+  81   3      
+  82   3                                      MP3 = 0;
+  83   3                                      MN3 = 1;
+  84   3      
+  85   3                                      MP4 = 0;
+  86   3                                      MN4 = 0;
+  87   3                                      delay(100);
+  88   3                                      break;
+  89   3      
+  90   3                              case 3:
+  91   3      
+  92   3                                      lcdsetCursor(0,0);
+  93   3                                      lcdprint("Place           ");                           
+  94   3                                      MP1 = 0;
+  95   3                                      MN1 = 0;
+  96   3      
+  97   3                                      MP2 = 0;
+  98   3                                      MN2 = 0;
+  99   3      
+ 100   3                                      MP3 = 1;
+ 101   3                                      MN3 = 0;
+ 102   3      
+ 103   3                                      MP4 = 0;
+ 104   3                                      MN4 = 0;
+ 105   3                                      delay(100);
+ 106   3                                      break;
+ 107   3      
+ 108   3                         case 4:
+ 109   3                                      
+ 110   3                                      lcdsetCursor(0,0);
+ 111   3                                      lcdprint("left            ");
+ 112   3      
+ 113   3                                      MP1 = 1;
+ 114   3                                      MN1 = 0;
+ 115   3      
+ 116   3                                      MP2 = 0;
+ 117   3                                      MN2 = 0;
+C51 COMPILER V9.06   MAIN                                                                  04/03/2015 19:54:45 PAGE 3   
+
+ 118   3      
+ 119   3                                      MP3 = 0;
+ 120   3                                      MN3 = 0;
+ 121   3      
+ 122   3                                      MP4 = 0;
+ 123   3                                      MN4 = 0;
+ 124   3      
+ 125   3                                      delay(100);
+ 126   3                                      break;
+ 127   3                         
+ 128   3                         case 6:
+ 129   3                                      lcdsetCursor(0,0);
+ 130   3                                      lcdprint("Right            ");
+ 131   3                                      
+ 132   3                                      MP1 = 0;
+ 133   3                                      MN1 = 0;
+ 134   3      
+ 135   3                                      MP2 = 1;
+ 136   3                                      MN2 = 0;
+ 137   3      
+ 138   3                                      MP3 = 0;
+ 139   3                                      MN3 = 0;
+ 140   3      
+ 141   3                                      MP4 = 0;
+ 142   3                                      MN4 = 0;
+ 143   3      
+ 144   3                                      delay(100);
+ 145   3                                      break;
+ 146   3      
+ 147   3                         case 7:
+ 148   3                                      
+ 149   3                                      lcdsetCursor(0,0);
+ 150   3                                      lcdprint("UP           ");
+ 151   3                                      MP1 = 0;
+ 152   3                                      MN1 = 0;
+ 153   3      
+ 154   3                                      MP2 = 0;
+ 155   3                                      MN2 = 0;
+ 156   3      
+ 157   3                                      MP3 = 0;
+ 158   3                                      MN3 = 0;
+ 159   3      
+ 160   3                                      MP4 = 1;
+ 161   3                                      MN4 = 0;
+ 162   3                                      delay(100);
+ 163   3                                      break;
+ 164   3                         
+ 165   3                         case 9:
+ 166   3                              
+ 167   3                                      lcdsetCursor(0,0);
+ 168   3                                      lcdprint("Down           ");    
+ 169   3                                      MP1 = 0;
+ 170   3                                      MN1 = 0;
+ 171   3      
+ 172   3                                      MP2 = 0;
+ 173   3                                      MN2 = 0;
+ 174   3      
+ 175   3                                      MP3 = 0;
+ 176   3                                      MN3 = 0;
+ 177   3      
+ 178   3                                      MP4 = 0;
+ 179   3                                      MN4 = 1;
+C51 COMPILER V9.06   MAIN                                                                  04/03/2015 19:54:45 PAGE 4   
+
+ 180   3                                      delay(100);
+ 181   3                                      break;
+ 182   3                        default:
+ 183   3                                      lcdsetCursor(0,0);
+ 184   3                                      lcdprint("Stop         ");
+ 185   3      
+ 186   3                                      MP1 = 0;
+ 187   3                                      MN1 = 0;
+ 188   3      
+ 189   3                                      MP2 = 0;
+ 190   3                                      MN2 = 0;
+ 191   3      
+ 192   3                                      MP3 = 0;
+ 193   3                                      MN3 = 0;
+ 194   3      
+ 195   3                                      MP4 = 0;
+ 196   3                                      MN4 = 0;
+ 197   3                                      P2 = 0x00;
+ 198   3      
+ 199   3                              break;       
+ 200   3      
+ 201   3                      }
+ 202   2                      delay(50);
+ 203   2                      MP1 = 0;
+ 204   2                      MN1 = 0;
+ 205   2      
+ 206   2                      MP2 = 0;
+ 207   2                      MN2 = 0;
+ 208   2                      
+ 209   2                      MP3 = 0;
+ 210   2                      MN3 = 0;
+ 211   2      
+ 212   2                      MP4 = 0;
+ 213   2                      MN4 = 0;
+ 214   2              }
+ 215   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    376    ----
+   CONSTANT SIZE    =    159    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

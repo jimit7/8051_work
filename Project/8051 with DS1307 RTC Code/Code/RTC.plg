@@ -1,0 +1,161 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\training\8051\8051_programs\Project\8051 with DS1307 RTC Code\Code\RTC.uvproj
+Project File Date:  07/03/2014
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling DS1307.c...
+DS1307.c(1): error C318: can't open file 'DS1307.c'
+compiling I2C.c...
+compiling LCD.c...
+compiling Main.c...
+Main.c(95): warning C206: 'delay': missing function-prototype
+Main.c(95): error C267: 'delay': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling I2C.c...
+compiling Main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_SEND_ACK?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_MS?MAIN
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _DELAY
+    MODULE:  LCD.obj (LCD)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY
+    MODULE:  LCD.obj (LCD)
+    ADDRESS: 0316H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY
+    MODULE:  LCD.obj (LCD)
+    ADDRESS: 0290H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY
+    MODULE:  LCD.obj (LCD)
+    ADDRESS: 0151H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY
+    MODULE:  LCD.obj (LCD)
+    ADDRESS: 015DH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY
+    MODULE:  LCD.obj (LCD)
+    ADDRESS: 0169H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY
+    MODULE:  LCD.obj (LCD)
+    ADDRESS: 0175H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY
+    MODULE:  LCD.obj (LCD)
+    ADDRESS: 0181H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY
+    MODULE:  LCD.obj (LCD)
+    ADDRESS: 0325H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _DELAY
+    MODULE:  Main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY
+    MODULE:  Main.obj (MAIN)
+    ADDRESS: 018EH
+Program Size: data=15.0 xdata=0 code=832
+creating hex file from "RTC"...
+"RTC" - 0 Error(s), 14 Warning(s).
+Build target 'Target 1'
+compiling delay.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_SEND_ACK?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_MS?MAIN
+Program Size: data=15.0 xdata=0 code=868
+creating hex file from "RTC"...
+"RTC" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling I2C.c...
+compiling LCD.c...
+compiling Main.c...
+compiling delay.c...
+compiling keypad.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_SEND_ACK?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_MS?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GET_KEY?KEYPAD
+Program Size: data=15.0 xdata=0 code=1134
+creating hex file from "RTC"...
+"RTC" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling I2C.c...
+compiling LCD.c...
+compiling Main.c...
+compiling delay.c...
+compiling keypad.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_SEND_ACK?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_MS?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GET_KEY?KEYPAD
+Program Size: data=15.0 xdata=0 code=1134
+creating hex file from "RTC"...
+"RTC" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling I2C.c...
+compiling LCD.c...
+compiling Main.c...
+compiling delay.c...
+compiling keypad.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_SEND_ACK?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_MS?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GET_KEY?KEYPAD
+Program Size: data=15.0 xdata=0 code=1134
+creating hex file from "RTC"...
+"RTC" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling Main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_SEND_ACK?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_MS?MAIN
+Program Size: data=15.0 xdata=0 code=1151
+creating hex file from "RTC"...
+"RTC" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling Main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_SEND_ACK?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEAR?LCD
+Program Size: data=15.0 xdata=0 code=1109
+creating hex file from "RTC"...
+"RTC" - 0 Error(s), 2 Warning(s).

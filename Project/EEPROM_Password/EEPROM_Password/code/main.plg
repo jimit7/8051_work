@@ -1,0 +1,54 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+G:\EEPROM_Password\code\Password_EEPROM.uvproj
+Project File Date:  04/02/2015
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling keypad.c...
+compiling main.c...
+main.c(180): warning C290: missing return value
+compiling delay.c...
+compiling LCD.c...
+compiling EEPROM.c...
+compiling I2C.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_SEND_ACK?I2C
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_EEPROMREAD?EEPROM
+    CALLER1: ?PR?EXTRER0?MAIN
+    CALLER2: ?C_C51STARTUP
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCDPRINT?LCD
+    CALLER1: ?PR?EXTRER0?MAIN
+    CALLER2: ?C_C51STARTUP
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCDSETCURSOR?LCD
+    CALLER1: ?PR?EXTRER0?MAIN
+    CALLER2: ?C_C51STARTUP
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  USERPASSWORD
+    MODULE:  ..\Simulation\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  USERPASSWORD
+    MODULE:  ..\Simulation\main.obj (MAIN)
+    ADDRESS: 004FH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  USERPASSWORD
+    MODULE:  ..\Simulation\main.obj (MAIN)
+    ADDRESS: 0089H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  USERPASSWORD
+    MODULE:  ..\Simulation\main.obj (MAIN)
+    ADDRESS: 0122H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  USERPASSWORD
+    MODULE:  ..\Simulation\main.obj (MAIN)
+    ADDRESS: 015EH
+Program Size: data=35.0 xdata=0 code=1811
+creating hex file from "..\Simulation\EEPROM_Password"...
+"..\Simulation\EEPROM_Password" - 0 Error(s), 10 Warning(s).

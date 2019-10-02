@@ -1,0 +1,8 @@
+"keypad.obj",
+"main.obj",
+"delay.obj",
+"LCD.obj",
+"EEPROM.obj",
+"I2C.obj" 
+TO "main" 
+RAMSIZE(256) 

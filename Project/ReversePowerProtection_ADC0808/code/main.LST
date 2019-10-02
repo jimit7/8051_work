@@ -1,0 +1,110 @@
+C51 COMPILER V9.06   MAIN                                                                  03/26/2015 10:45:23 PAGE 1   
+
+
+C51 COMPILER V9.06, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Proteus simulation\main.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND OBJECT(.\Proteus simulation\main.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include "delay.h"
+   3          #include "ADC0808.h"
+   4          #include "lcd.h"
+   5          
+   6          void setvalue(void);
+   7          
+   8          sbit inc = P3^2;
+   9          sbit dec = P3^3;
+  10          sbit OK = P3^4;
+  11          sbit buzzer = P3^1;
+  12          sbit RELAY = P3^0;
+  13          
+  14          unsigned int g = 25 ;
+  15          
+  16          void main()
+  17          {
+  18   1        unsigned char CTValue;
+  19   1        lcdbegin();
+  20   1        ADCbegin();
+  21   1        lcdclear();
+  22   1        setvalue();
+  23   1      
+  24   1        while(1)
+  25   1        {
+  26   2              lcdsetCursor(0,0);
+  27   2              CTValue = analogRead(A1);
+  28   2              lcdprint("CTValue:-");
+  29   2              lcdwrite(CTValue);
+  30   2              
+  31   2              if(CTValue > g)
+  32   2              {
+  33   3                      RELAY = 0;
+  34   3                      buzzer = 1;
+  35   3                      delay(500);
+  36   3                      buzzer = 0;
+  37   3                      delay(500);
+  38   3              }
+  39   2      
+  40   2              else
+  41   2              {
+  42   3                      RELAY = 1;
+  43   3              }
+  44   2      
+  45   2              delay(1000);
+  46   2        }
+  47   1      
+  48   1      }
+  49          
+  50          void setvalue()
+  51          {
+  52   1              inc = 1;
+  53   1              dec = 1;
+  54   1              OK = 1;
+  55   1      
+C51 COMPILER V9.06   MAIN                                                                  03/26/2015 10:45:23 PAGE 2   
+
+  56   1              lcdsetCursor(0,0);
+  57   1              delay(1);
+  58   1              lcdprint("Set limit:");
+  59   1              while(1)
+  60   1              {
+  61   2                      if(inc == 0)
+  62   2                      {
+  63   3                              g = g+1;
+  64   3                              delay(200);
+  65   3                      }
+  66   2                      if(dec == 0)
+  67   2                      {
+  68   3                              g = g-1;
+  69   3                              delay(200);
+  70   3                      }
+  71   2                      if(OK == 0)
+  72   2                      {
+  73   3                              goto start;
+  74   3                      }
+  75   2      
+  76   2                      lcdsetCursor(12,0);
+  77   2                      lcdwrite(g);
+  78   2                      
+  79   2              }
+  80   1              
+  81   1      start:
+  82   1              lcdclear();
+  83   1              lcdprint("Welcome");
+  84   1      
+  85   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    179    ----
+   CONSTANT SIZE    =     29    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

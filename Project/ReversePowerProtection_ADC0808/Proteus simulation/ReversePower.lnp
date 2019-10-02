@@ -1,0 +1,6 @@
+".\Proteus simulation\main.obj",
+".\Proteus simulation\ADC0808.obj",
+".\Proteus simulation\delay.obj",
+".\Proteus simulation\lcd.obj" 
+TO ".\Proteus simulation\ReversePower" 
+PRINT(".\ReversePower.m51") RAMSIZE(256) 

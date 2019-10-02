@@ -1,0 +1,6 @@
+"..\Proteus simulation\adc804.obj",
+"..\Proteus simulation\delay.obj",
+"..\Proteus simulation\lcd.obj",
+"..\Proteus simulation\ReverseProtection.obj" 
+TO "..\Proteus simulation\ReverseProtection" 
+PRINT(".\ReverseProtection.m51") RAMSIZE(256) 

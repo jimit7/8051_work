@@ -1,0 +1,6 @@
+"main.obj",
+"ADC0808.obj",
+"delay.obj",
+"lcd.obj" 
+TO "ReversePower" 
+RAMSIZE(256) 

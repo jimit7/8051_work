@@ -1,0 +1,241 @@
+C51 COMPILER V9.06   LCD_DISPLAY                                                           04/19/2015 18:58:08 PAGE 1   
+
+
+C51 COMPILER V9.06, COMPILATION OF MODULE LCD_DISPLAY
+OBJECT MODULE PLACED IN ..\Proteus simulation\lcd_display.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE lcd_display.c BROWSE DEBUG OBJECTEXTEND OBJECT(..\Proteus simulation\lcd_di
+                    -splay.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include "lcd.h"
+   3          #include "delay.h"
+   4          
+   5          // start of ADC  group
+   6          sbit wr = P2^0;               //START 
+   7          sbit intr=P2^1;                //EOC 
+   8          sbit rd = P2^2;                //output enable 
+   9          // end of ADC group
+  10          
+  11          unsigned char  present_sample,previous_sample;
+  12          unsigned char  x; 
+  13          unsigned char  up_sample,down_sample,mid_sample;  
+  14          
+  15          void inputting();
+  16          
+  17          code unsigned char stepper_code[4]={0xfe,0xfb,0xfd,0xf7};
+  18          
+  19          signed char step;
+  20          unsigned char k;
+  21          
+  22          void msdelay (unsigned int itime)
+  23          {
+  24   1              unsigned int i,j;
+  25   1              for(i=0; i<itime; i++)
+  26   1              {
+  27   2                      for(j=0; j<100; j++)
+  28   2                      {;}                 // no operation
+  29   2              }
+  30   1      
+  31   1              return;
+  32   1      }
+  33          
+  34          void inputting()
+  35          {       
+  36   1                //Code for ADC input
+  37   1          P0 = 0xFF;
+  38   1              intr = 1;
+  39   1              rd = 1;
+  40   1              wr = 1;
+  41   1              msdelay(1);
+  42   1              wr=0;
+  43   1              msdelay(1);
+  44   1              wr = 1; 
+  45   1              while(intr == 1);
+  46   1              msdelay(10);             // this delay is to allow completion of ADC process
+  47   1              rd = 0;
+  48   1              msdelay(1);
+  49   1              rd = 1;  
+  50   1              x = P0;
+  51   1               
+  52   1               return;
+  53   1      }
+  54          
+C51 COMPILER V9.06   LCD_DISPLAY                                                           04/19/2015 18:58:08 PAGE 2   
+
+  55          void main()
+  56          {
+  57   1      
+  58   1              lcdbegin();
+  59   1      
+  60   1              lcdsetCursor(0,0);
+  61   1              lcdprint("Tracking of");
+  62   1              lcdsetCursor(1,1);
+  63   1              lcdprint("Solar Panel");
+  64   1              delay(3000);
+  65   1      
+  66   1              lcdclear();
+  67   1              lcdsetCursor(0,0);
+  68   1              lcdprint("With Respect to");
+  69   1              lcdsetCursor(1,1);
+  70   1              lcdprint("Light Intensity");
+  71   1              delay(3000);
+  72   1      
+  73   1              lcdclear();
+  74   1      
+  75   1              lcdsetCursor(0,0);
+  76   1              lcdprint("Prepared By:- ");
+  77   1              delay(2000);
+  78   1      
+  79   1              lcdclear();
+  80   1              lcdprint("Neel   Dhrumit");
+  81   1              lcdsetCursor(1,1);
+  82   1              lcdprint("Ankit   Meet");
+  83   1              delay(3000);
+  84   1      
+  85   1              lcdclear();
+  86   1              lcdprint("Guided By:-     ");
+  87   1              lcdsetCursor(1,1);
+  88   1              lcdprint("Prof.H.K.Jadeja");
+  89   1              delay(4000);
+  90   1      
+  91   1              lcdclear();
+  92   1              lcdprint("Solar Power sys  ");
+  93   1              
+  94   1              while(1)
+  95   1              {
+  96   2              
+  97   2                      step++;
+  98   2                      if( step > 3)
+  99   2                      {
+ 100   3                               step = 0;
+ 101   3                               P1 = stepper_code[step]; // panel rotate
+ 102   3                               msdelay(3000);
+ 103   3                           inputting();
+ 104   3                               up_sample = x;
+ 105   3                               step--;        
+ 106   3                                      
+ 107   3                      }
+ 108   2                                      
+ 109   2                      if( step < 0)
+ 110   2                      {
+ 111   3                               step = 3;
+ 112   3                               P1 = stepper_code[step]; // panel rotate
+ 113   3                               msdelay(3000);
+ 114   3                           inputting();
+ 115   3                               mid_sample = x;
+ 116   3                                      
+C51 COMPILER V9.06   LCD_DISPLAY                                                           04/19/2015 18:58:08 PAGE 3   
+
+ 117   3                           step--;
+ 118   3                      }
+ 119   2                                      
+ 120   2             if( step < 0)
+ 121   2                 {
+ 122   3                                       step = 3;
+ 123   3                                      P1 = stepper_code[step]; // panel rotate
+ 124   3                                      msdelay(3000);
+ 125   3                              inputting();
+ 126   3                                      down_sample = x;
+ 127   3                                      
+ 128   3                                      step++;
+ 129   3                      }
+ 130   2                                      
+ 131   2                      
+ 132   2                      
+ 133   2                      if( step > 3)
+ 134   2                      {
+ 135   3                                      step = 0;
+ 136   3                                      P1 = stepper_code[step]; // panel rotate
+ 137   3                                      msdelay(3000);
+ 138   3                                  inputting();
+ 139   3                                      previous_sample = x;
+ 140   3                      }
+ 141   2                              
+ 142   2      
+ 143   2      
+ 144   2      
+ 145   2      
+ 146   2              else if(up_sample > mid_sample)
+ 147   2          { 
+ 148   3                                      
+ 149   3                      LOOP1:
+ 150   3                              step++;
+ 151   3                              if( step > 3)
+ 152   3                              {
+ 153   4                                       step = 0;
+ 154   4                                       P1 = stepper_code[step];
+ 155   4                                       msdelay(3000);
+ 156   4                               inputting();
+ 157   4                                       present_sample = x;
+ 158   4                              }
+ 159   3                              if(present_sample > previous_sample)
+ 160   3                                      {
+ 161   4                                              previous_sample = present_sample;
+ 162   4                                              goto  LOOP1;
+ 163   4                              }
+ 164   3                                      else
+ 165   3                                      {
+ 166   4                                              step--;
+ 167   4                                              if( step < 0)
+ 168   4                                              step = 3;
+ 169   4                                              P1 = stepper_code[step]; // panel rotate
+ 170   4                                              msdelay(3000);
+ 171   4                                              inputting();
+ 172   4                                              previous_sample = x;
+ 173   4                                      }
+ 174   3                         }
+ 175   2              
+ 176   2      
+ 177   2              else if(down_sample > mid_sample)
+ 178   2              { 
+C51 COMPILER V9.06   LCD_DISPLAY                                                           04/19/2015 18:58:08 PAGE 4   
+
+ 179   3                      LOOP2:
+ 180   3                      step--;
+ 181   3                      if( step == -1)
+ 182   3                      {
+ 183   4                              step = 3;
+ 184   4                              P1 = stepper_code[step];
+ 185   4                              msdelay(3000);
+ 186   4                              inputting();
+ 187   4                              present_sample = x;
+ 188   4                      
+ 189   4                       }
+ 190   3                              if(present_sample > previous_sample)
+ 191   3                              {
+ 192   4                                      previous_sample = present_sample;
+ 193   4                                      goto  LOOP2;
+ 194   4                              }
+ 195   3                              else
+ 196   3                              {
+ 197   4                                      step++;
+ 198   4                                      if( step > 3)
+ 199   4                                      step = 0;
+ 200   4                              P1 = stepper_code[step];
+ 201   4                              msdelay(3000);
+ 202   4                              inputting();
+ 203   4                                      previous_sample = x;
+ 204   4                              }  
+ 205   3      
+ 206   3                      }
+ 207   2                      
+ 208   2                        msdelay(10000);
+ 209   2                 }
+ 210   1              
+ 211   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    486    ----
+   CONSTANT SIZE    =    154    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      8    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
